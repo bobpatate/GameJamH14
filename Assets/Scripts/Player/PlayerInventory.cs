@@ -3,13 +3,13 @@ using System.Collections;
 
 public class PlayerInventory : MonoBehaviour {
 
-	private struct Ressource
+	public struct Ressource
 	{
 		public string nom;
 		public int tier;
 	}
 
-	private Ressource[] inventaire = new Ressource[10];
+	public Ressource[] inventaire = new Ressource[10];
 	private bool isInCollectingRange = false;
 	private bool showCollectTimeBar = false;
 	private GameObject collectible;
