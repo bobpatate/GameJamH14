@@ -5,9 +5,13 @@
 *.userprefs
 *.unityproj
 *.suo
-/Library/
+Library/
 /Temp/
+
 
 # SourceTree Patch against .gitignore_global on Windows
 !*.exe
 !*.dll
+Library/ScriptAssemblies/
+Library/CurrentLayout.dwlt
+Library/ScriptAssemblies/CompilationCompleted.txt
