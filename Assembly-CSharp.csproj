@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5FC33283-EB99-E843-6473-E47A51F2C2B1}</ProjectGuid>
+	<ProjectGuid>{C5C866D1-FA7C-9C68-DC62-05EE9EA89C62}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,22 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
-     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightCone.shader" />
-     <None Include="Assets\ShaderForge\Readme.txt" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\MaterialPlatform.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\Cubemaps.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\Parallax.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightWrapping.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexColorRounding.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\TessellationDisplacement.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\Tiles.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\PixelRotator.shader" />
-     <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
+     <Compile Include="Assets\Scripts\Ennemy.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{D0AF3784-2B29-1CE0-A325-4C843CE0B080}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{FA9A0DC1-9B94-BC88-24A8-8BE028ED439D}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
