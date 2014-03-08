@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	public float _maxVelocityChange = 5.0f;
 	public float _speed = 5.0f;
 
+	public string horizontal, vertical;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +17,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_horizontal = Input.GetAxis("Horizontal1");
-		_vertical = Input.GetAxis("Vertical1");
+		_horizontal = Input.GetAxis(horizontal);
+		_vertical = Input.GetAxis(vertical);
 		
 		Vector3 targetVelocity = new Vector3(_horizontal, 0, _vertical);
 		targetVelocity = transform.rotation*targetVelocity;
