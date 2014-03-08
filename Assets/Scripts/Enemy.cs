@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
+	HealthBar healthBar;
+
 	//stats
 	public enum EnemyLevel{ Weak, Intermadiate, Strong};
 
@@ -20,7 +22,9 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		healthBar = gameObject.GetComponent<HealthBar>();
+		healthBar.maxhp = hp;
+		healthBar.hp = hp;
 	}
 	
 	// Update is called once per frame
@@ -40,6 +44,7 @@ public class Enemy : MonoBehaviour {
 	public void ReceivesDamage(float damage){
 		hp -= damage-endurance;
 		playerPlayed = true;
+		healthBar.hp = hp;
 		print ("Enemy hp left "  + hp);
 		nextAttack = Time.time + 1.5f;
 

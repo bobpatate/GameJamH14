@@ -48,9 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraBarycenterController.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\HealthBar\EnemyHealth.cs" />
-     <Compile Include="Assets\Scripts\HealthBar\EnemyHealthBar_Green.cs" />
-     <Compile Include="Assets\Scripts\HealthBar\EnemyHealthBar_Red.cs" />
+     <Compile Include="Assets\Scripts\GUI_test.cs" />
+     <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
      <Compile Include="Assets\Scripts\ObjectLabel.cs" />
      <Compile Include="Assets\Scripts\PlayerCombat.cs" />
