@@ -410,6 +410,8 @@ GameObject:
   - 54: {fileID: 1599045134}
   - 114: {fileID: 1599045132}
   - 114: {fileID: 1599045135}
+  - 114: {fileID: 1599045136}
+  - 114: {fileID: 1599045137}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -522,6 +524,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 
+--- !u!114 &1599045136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599045127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bb1c596fb90474f9ccc266ee5b16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControllerScript: {fileID: 1599045132}
+--- !u!114 &1599045137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599045127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5092e2d8fc36b83469b3f72281465610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1756744702
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +563,7 @@ GameObject:
   - 114: {fileID: 1756744707}
   - 114: {fileID: 1756744710}
   - 114: {fileID: 1756744711}
+  - 114: {fileID: 1756744712}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -662,6 +688,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControllerScript: {fileID: 1756744707}
+--- !u!114 &1756744712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756744702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5092e2d8fc36b83469b3f72281465610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1835188068
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +870,10 @@ MonoBehaviour:
   iconBootsT1: {fileID: 0}
   iconBootsT2: {fileID: 0}
   iconBootsT3: {fileID: 0}
+  iconGatT0: {fileID: 0}
+  iconGatT1: {fileID: 0}
+  iconGatT2: {fileID: 0}
+  iconGatT3: {fileID: 0}
   iconMetalT1: {fileID: 0}
   iconMetalT2: {fileID: 0}
   iconMetalT3: {fileID: 0}
@@ -842,6 +883,16 @@ MonoBehaviour:
   iconElectronicT1: {fileID: 0}
   iconElectronicT2: {fileID: 0}
   iconElectronicT3: {fileID: 0}
+  equipP1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  equipP2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Player1: {fileID: 1756744702}
   Player2: {fileID: 1599045127}
 --- !u!4 &1881421341
