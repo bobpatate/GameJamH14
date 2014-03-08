@@ -37,9 +37,8 @@ public class PlayerInventory : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.E))
 			{
 				isCollecting = true;
-				print (collectible.name);
 				showCollectTimeBar = true;
-
+				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
 
 				collectingStartTime = Time.time;
@@ -69,7 +68,6 @@ public class PlayerInventory : MonoBehaviour {
 		switch(collider.gameObject.name)
 		{
 		case "Collectible_Trigger" :
-			print("OnTriggerEnter");
 			isInCollectingRange = true;
 			collectible = collider.transform.parent.gameObject;
 			break;
@@ -80,7 +78,6 @@ public class PlayerInventory : MonoBehaviour {
 		switch(collider.gameObject.name)
 		{
 		case "Collectible_Trigger" :
-			print("OnTriggerExit");
 			isInCollectingRange = false;
 			collectible = null;	
 			break;
@@ -98,7 +95,6 @@ public class PlayerInventory : MonoBehaviour {
 			GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 15),"");
 
 			//draw the filled-in part:
-			print ((collectingStartTime-Time.time)/ressourceDelay);
 			GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 10));
 			GUI.Box(new Rect(0,0, collectTimeBarLenght, 10),"", currentStyle);
 			GUI.EndGroup();
