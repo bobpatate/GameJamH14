@@ -2,13 +2,7 @@
 using System.Collections;
 
 public class PlayerInventory : MonoBehaviour {
-
-	public struct Ressource
-	{
-		public string nom;
-		public int tier;
-	}
-
+	
 	public Ressource[] inventaire = new Ressource[10];
 	private bool isInCollectingRange = false;
 	private bool showCollectTimeBar = false;
@@ -26,6 +20,8 @@ public class PlayerInventory : MonoBehaviour {
 
 	private bool isInCraftingRange = false;
 	private GameObject merchant;
+
+	ItemType itemType;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +52,7 @@ public class PlayerInventory : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.E))
 			{
 				print ("Marchand fag");
+				giveInventoryToMerchant(merchant);
 			}
 		}
 	}
@@ -186,4 +183,7 @@ public class PlayerInventory : MonoBehaviour {
 		return true;
 	}
 
+	private void giveInventoryToMerchant(GameObject merchant){
+		itemType = ItemBuilder.Pick(inventaire);
+	}
 }
