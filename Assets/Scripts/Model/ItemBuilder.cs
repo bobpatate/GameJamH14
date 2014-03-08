@@ -8,6 +8,9 @@ public static class ItemBuilder
     /// </summary>
     public static ItemType Pick(Ressource[] inventory)
     {
+        // Filtrage des items "vides"
+        inventory = inventory.Where(i => !string.IsNullOrEmpty(i.nom)).ToArray();
+
         Recipe recipe = PickRecipe(inventory);
         int tier = PickTier(inventory);
 
@@ -22,9 +25,9 @@ public static class ItemBuilder
 
     private static int CalculateWeight(Ressource[] inventory, Recipe recipe)
     {
-        float metalRatio = (float)inventory.Count(r => r.nom == "metal") / (float)inventory.Length;
-        float electronicRatio = (float)inventory.Count(r => r.nom == "electronic") / (float)inventory.Length;
-        float textileRatio = (float)inventory.Count(r => r.nom == "textile") / (float)inventory.Length;
+        float metalRatio = (float)inventory.Count(r => r.nom == "Metal") / (float)inventory.Length;
+        float electronicRatio = (float)inventory.Count(r => r.nom == "Electronique") / (float)inventory.Length;
+        float textileRatio = (float)inventory.Count(r => r.nom == "Textile") / (float)inventory.Length;
 
         float metalCompatibility = Mathf.Pow(1.0f - Mathf.Abs(metalRatio - recipe.MetalRatio), 2f);
         float electronicCompatibility = Mathf.Pow(1.0f - Mathf.Abs(electronicRatio - recipe.ElectronicRatio), 2f);
