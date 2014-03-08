@@ -15,16 +15,18 @@ public class PlayerCombat : MonoBehaviour {
 	float nextAttack;
 	Enemy enemy;
 
+	PlayerController playerControllerScript;
+
 	// Use this for initialization
 	void Start () {
 		nextAttack = Time.time + 1.5f;
+
+		playerControllerScript = GetComponent<PlayerController>();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		//Normal update
-
 		//Battle update
 		if(isInBattle && enemyPlayed && Time.time > nextAttack){
 			nextAttack = Time.time + 1.5f;
@@ -36,7 +38,8 @@ public class PlayerCombat : MonoBehaviour {
 
 	//Actions
 	void Attacks(){
-		enemy.ReceivesDamage(strength);
+		if(enemy.ReceivesDamage(strength))
+			playerControllerScript.enabled = true;
 	}
 
 	public void ReceivesDamage( float damage ){
@@ -65,6 +68,7 @@ public class PlayerCombat : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy" && !isInBattle){
 			if(other.gameObject.GetComponent<Enemy>().getTeam() != team){
+				playerControllerScript.enabled = false;
 				isInBattle = true;
 				print("Fightooo!!!");
 				enemy = other.gameObject.GetComponent<Enemy>();

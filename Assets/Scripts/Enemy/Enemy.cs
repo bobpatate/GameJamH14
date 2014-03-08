@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour {
 		player.ReceivesDamage(strength);
 	}
 
-	public void ReceivesDamage(float damage){
+	public bool ReceivesDamage(float damage){
 		hp -= damage-endurance;
 		playerPlayed = true;
 		healthBar.hp = hp;
@@ -57,7 +57,10 @@ public class Enemy : MonoBehaviour {
 		if(hp <= 0){
 			print ("Enemy dead");
 			Die();
+			return true;
 		}
+
+		return false;
 	}
 
 
