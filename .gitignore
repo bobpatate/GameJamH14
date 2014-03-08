@@ -5,8 +5,9 @@
 *.userprefs
 *.unityproj
 *.suo
-/Library/
+Library/
 /Temp/
+/Library/
 
 # SourceTree Patch against .gitignore_global on Windows
 !*.exe
