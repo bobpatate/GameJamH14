@@ -25,7 +25,7 @@ public class GUI_test : MonoBehaviour {
 	public Texture2D iconElectronicT2;
 	public Texture2D iconElectronicT3;
 
-	private Texture2D inv1, inv2, inv3, inv4, inv5, inv6, inv7, inv8, inv9, inv10;
+	private Texture2D[] inv = new Texture2D[10];
 	
 	public GameObject Player1;
 	public GameObject Player2;
@@ -38,33 +38,57 @@ public class GUI_test : MonoBehaviour {
 
 		}
 
-		GUIStyle myStyle = new GUIStyle();
-		myStyle.fontSize = 12;
-		myStyle.normal.textColor = Color.white;
-		
-		//GUI.TextArea (new Rect (0,Screen.height - 50,100,50), "Arme: \nCorp: \nPied: ");
-		GUI.TextArea (new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), "");
-		GUI.TextArea (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,150), "");
+		GUI.Box (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,Screen.height*150/910), "");
+		GUI.Box (new Rect (0 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
 		////
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		/// Healtbar
+		GUI.Box (new Rect (Screen.width*5/1617, Screen.height  - Screen.height*174/910, Screen.width*240/1617, Screen.height*18/910), "");
+		/// 
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
 		////
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*130/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*130/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*130/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*130/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
 		////
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*190/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*190/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*190/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*190/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
 		////
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*250/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*250/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*250/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*250/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
 		////
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*310/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
-		GUI.TextArea (new Rect ((Screen.width / 2)-Screen.width*310/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*310/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*310/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
 		////
 		/// 
-		GUI.TextArea (new Rect (Screen.width*20/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
-		GUI.TextArea (new Rect (Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
-		GUI.TextArea (new Rect (Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
-		GUI.TextArea (new Rect (Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width*20/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		////
+		/// 
+		/// 
+		GUI.Box (new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), "");
+		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
+		////
+		GUI.Box (new Rect ((Screen.width)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		////
+		GUI.Box (new Rect ((Screen.width)-Screen.width*130/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width)-Screen.width*130/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		////
+		GUI.Box (new Rect ((Screen.width)-Screen.width*190/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width)-Screen.width*190/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		////
+		GUI.Box (new Rect ((Screen.width)-Screen.width*250/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width)-Screen.width*250/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		////
+		GUI.Box (new Rect ((Screen.width)-Screen.width*310/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), "");
+		GUI.Box (new Rect ((Screen.width )-Screen.width*310/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), "");
+		////
+		/// 
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*20/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), "");
 	}
 }
