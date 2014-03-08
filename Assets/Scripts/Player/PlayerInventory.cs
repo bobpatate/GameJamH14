@@ -34,7 +34,7 @@ public class PlayerInventory : MonoBehaviour {
 	void Update () {
 		if (isInCollectingRange)
 		{
-			if (Input.GetKeyDown(KeyCode.E))
+			if (Input.GetKeyDown(KeyCode.E) && !isCollecting)
 			{
 				isCollecting = true;
 				showCollectTimeBar = true;
