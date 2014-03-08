@@ -74,14 +74,14 @@ public class PlayerCombat : MonoBehaviour {
 
 	//Collisions
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Enemy" && !isInBattle){
-			if(other.gameObject.GetComponent<Enemy>().getTeam() != team){
+		if (other.gameObject.name == "Fight_Trigger" && !isInBattle){
+			if(other.gameObject.transform.parent.GetComponent<Enemy>().getTeam() != team){
 				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
 				isInBattle = true;
 				print("Fightooo!!!");
-				enemy = other.gameObject.GetComponent<Enemy>();
-				other.gameObject.GetComponent<Enemy>().IsAttacked(this);
+				enemy = other.gameObject.transform.parent.GetComponent<Enemy>();
+				other.gameObject.transform.parent.GetComponent<Enemy>().IsAttacked(this);
 			}
 		}
 
@@ -91,7 +91,7 @@ public class PlayerCombat : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (other.tag == "Enemy" && isInBattle){
+		if (other.gameObject.name == "Fight_Trigger" && isInBattle){
 			isInBattle = false;
 			print("Soyonara!!!");
 			enemy = null;
