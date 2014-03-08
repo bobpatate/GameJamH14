@@ -71,6 +71,10 @@ public class PlayerCombat : MonoBehaviour {
 				other.gameObject.GetComponent<Enemy>().IsAttacked(this);
 			}
 		}
+
+		if (other.tag == "HealthRestore" && !isInBattle){
+			print("Health found");
+		}
 	}
 
 	void OnTriggerExit(Collider other) {
