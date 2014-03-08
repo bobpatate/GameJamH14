@@ -24,6 +24,9 @@ public class PlayerInventory : MonoBehaviour {
 	private GUIStyle currentStyle = null;
 	public PlayerController playerControllerScript;
 
+	private bool isInCraftingRange = false;
+	private GameObject merchant;
+
 	// Use this for initialization
 	void Start () {
 		InitializeInventory();
@@ -48,6 +51,13 @@ public class PlayerInventory : MonoBehaviour {
 			if(isCollecting && Time.time > collectingTime)
 				doneCollecting();
 		}
+		if (isInCraftingRange)
+		{
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+				print ("Marchand fag");
+			}
+		}
 	}
 
 	void doneCollecting(){
@@ -71,6 +81,10 @@ public class PlayerInventory : MonoBehaviour {
 			isInCollectingRange = true;
 			collectible = collider.transform.parent.gameObject;
 			break;
+		case "Merchant_Trigger":
+			isInCraftingRange = true;
+			merchant = collider.transform.parent.gameObject;
+			break;
 		}
 	}
 
@@ -80,6 +94,10 @@ public class PlayerInventory : MonoBehaviour {
 		case "Collectible_Trigger" :
 			isInCollectingRange = false;
 			collectible = null;	
+			break;
+		case "Merchant_Trigger":
+			isInCraftingRange = false;
+			merchant = null;
 			break;
 		}
 	}
