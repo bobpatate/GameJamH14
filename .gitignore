@@ -7,8 +7,11 @@
 *.suo
 Library/
 /Temp/
-/Library/
+
 
 # SourceTree Patch against .gitignore_global on Windows
 !*.exe
 !*.dll
+Library/ScriptAssemblies/
+Library/CurrentLayout.dwlt
+Library/ScriptAssemblies/CompilationCompleted.txt
