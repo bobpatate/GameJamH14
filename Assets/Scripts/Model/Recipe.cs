@@ -4,16 +4,20 @@
     /// Slot built by this recipe.
     /// </summary>
     public Slots Slot { get; private set; }
-
+	public int preferredMetal;
+	public int preferredTextile;
+	public int preferredElectronic;
     /// <summary>
     /// Cost of this recipe.
     /// </summary>
     //public Ressource[] Cost { get; private set; }
 
-    private Recipe(Slots slot/*, Truc cost*/)
+    private Recipe(Slots slot, int Metal, int Textile, int Electronic)
     {
         Slot = slot;
-        //Cost = cost;
+		preferredMetal=Metal;
+		preferredTextile=Textile;
+		preferredElectronic=Electronic;
     }
 
     // --- DEFINE GAME RECIPES HERE ---
