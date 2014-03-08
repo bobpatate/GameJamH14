@@ -45,4 +45,8 @@ public class HealthBarEnemy : MonoBehaviour {
 		healthbarWidth = Mathf.FloorToInt(healthpercent*healthbarMaxWidth);
 		myhb.guiTexture.pixelInset = new Rect(10, 10, healthbarWidth, 5);
 	}
+
+	public void destroyToi(){
+		Destroy(myhb);
+	}
 }

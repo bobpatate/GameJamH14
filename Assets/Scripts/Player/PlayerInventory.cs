@@ -13,16 +13,19 @@ public class PlayerInventory : MonoBehaviour {
 	private bool isInCollectingRange = false;
 	private bool showCollectTimeBar = false;
 	private GameObject collectible;
-	private float collectingTime = 0.0f;
-	private float ressourceTime = 100.0f;
-	private float collectTimeBarLenght;
-	private float currentCollectTime;
+
+
+	private bool isCollecting = false;
+	private float ressourceDelay = 4.0f;
+	private float collectingStartTime;
+	private float collectingTime;
+
+	private float collectTimeBarLenght = 100;
 	private GUIStyle currentStyle = null;
 	public PlayerController playerControllerScript;
 
 	// Use this for initialization
 	void Start () {
-		currentCollectTime = 0.0f;
 		InitializeInventory();
 		playerControllerScript = GetComponent<PlayerController>();
 	}
@@ -31,29 +34,37 @@ public class PlayerInventory : MonoBehaviour {
 	void Update () {
 		if (isInCollectingRange)
 		{
-			print ("InCollectingRange");
 			if (Input.GetKeyDown(KeyCode.E))
 			{
+				isCollecting = true;
 				print (collectible.name);
 				showCollectTimeBar = true;
-				collectTimeBarLenght = ressourceTime;
+
 				playerControllerScript.enabled = false;
-				print (ressourceTime);
-				while (currentCollectTime < ressourceTime)
-				{
-					currentCollectTime += Time.time*0.05f;
-				}
-				playerControllerScript.enabled = true;
-				currentCollectTime = 0.0f;
-				showCollectTimeBar = false;
-				isInCollectingRange = false;
-				AddToInventory(collectible);
-				Destroy(collectible);
-				collectible = null;
+
+				collectingStartTime = Time.time;
+				collectingTime = Time.time + ressourceDelay;
 			}
+
+			if(isCollecting && Time.time > collectingTime)
+				doneCollecting();
 		}
 	}
 
+	void doneCollecting(){
+		isCollecting = false;
+		playerControllerScript.enabled = true;
+		collectingTime = 0.0f;
+		showCollectTimeBar = false;
+		isInCollectingRange = false;
+
+		AddToInventory(collectible);
+		Destroy(collectible);
+		collectible = null;
+	}
+
+
+	//Collisions
 	void OnTriggerEnter(Collider collider) {
 		switch(collider.gameObject.name)
 		{
@@ -76,18 +87,19 @@ public class PlayerInventory : MonoBehaviour {
 		}
 	}
 
+
+	//GUI
 	void OnGUI()
 	{
 		InitStyles();
 		if ( showCollectTimeBar )
 		{
-			//GUI.Box (new Rect(Screen.width/2 - collectTimeBarLenght / 2,600,collectTimeBarLenght + 10,15),"" );             //Fond de la barre de recolte
-			//GUI.Box (new Rect(Screen.width/2 - collectTimeBarLenght / 2 + 10,602,currentCollectTime,10),"",currentStyle ); //Barre de recolte
-			GUI.BeginGroup(new Rect(Screen.width/2 - collectTimeBarLenght / 2, 600, collectTimeBarLenght + 10, 15));
+			GUI.BeginGroup(new Rect(Screen.width/4 - collectTimeBarLenght / 2, Screen.height*0.8f, collectTimeBarLenght + 10, 15));
 			GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 15),"");
-			
+
 			//draw the filled-in part:
-			GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * currentCollectTime, 10));
+			print ((collectingStartTime-Time.time)/ressourceDelay);
+			GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 10));
 			GUI.Box(new Rect(0,0, collectTimeBarLenght, 10),"", currentStyle);
 			GUI.EndGroup();
 			GUI.EndGroup();
@@ -118,6 +130,8 @@ public class PlayerInventory : MonoBehaviour {
 		return result;
 	}
 
+
+	//Inventory
 	private void AddToInventory(GameObject collectible){
 		if (!CheckInventoryFull())
 		{

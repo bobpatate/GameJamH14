@@ -72,7 +72,8 @@ public class Enemy : MonoBehaviour {
 		isInBattle = false;
 	}
 	void Die(){
-		Destroy(this.gameObject);
+		healthBar.destroyToi();
+		Destroy (this.gameObject);
 	}
 
 

@@ -28,9 +28,11 @@ public class TrackingController : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 targetPosition = target.transform.position + Vector3.up * distance;
+			Vector3 targetPosition = target.transform.position + Vector3.up * distance;
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, rigidity);
+
+			transform.rotation = Quaternion.Euler(75, 0, 0);
         }
     }
 }
