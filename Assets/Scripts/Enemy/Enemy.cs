@@ -6,14 +6,14 @@ public class Enemy : MonoBehaviour {
 	HealthBarEnemy healthBar;
 
 	//stats
-	public enum EnemyLevel{ Weak, Intermadiate, Strong};
+	public enum EnemyLevel{ Weak, Intermediate, Strong, SuperStrong, Boss};
 
 	public EnemyLevel level;
 	public string team;
-	float strength = 3.0f;
-	float endurance = 0.5f;
-	float speed = 1.0f;
-	float hp = 20.0f;
+	float strength;
+	float endurance;
+	float speed;
+	float hp;
 
 	bool isInBattle = false;
 	PlayerCombat player;
@@ -23,6 +23,39 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		healthBar = gameObject.GetComponent<HealthBarEnemy>();
+
+		//levelstats
+		if(level == EnemyLevel.Weak){
+			strength = 3.0f;
+			endurance = 0.5f;
+			speed = 1.0f;
+			hp = 20.0f;
+		}
+		else if(level == EnemyLevel.Intermediate){
+			strength = 5.0f;
+			endurance = 2.0f;
+			speed = 1.4f;
+			hp = 35.0f;
+		}
+		else if(level == EnemyLevel.Strong){
+			strength = 8.0f;
+			endurance = 3.0f;
+			speed = 1.8f;
+			hp = 50.0f;
+		}
+		else if(level == EnemyLevel.SuperStrong){
+			strength = 13.0f;
+			endurance = 6.0f;
+			speed = 2.0f;
+			hp = 80.0f;
+		}
+		else if(level == EnemyLevel.Boss){
+			strength = 19.0f;
+			endurance = 11.0f;
+			speed = 2.3f;
+			hp = 130.0f;
+		}
+
 		healthBar.maxhp = hp;
 		healthBar.hp = hp;
 
