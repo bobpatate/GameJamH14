@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController2 : MonoBehaviour {
 
 	private float _horizontal, _vertical;
 	
 	public float _maxVelocityChange = 5.0f;
 	public float _speed = 5.0f;
-
+	
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_horizontal = Input.GetAxis("Horizontal1");
-		_vertical = Input.GetAxis("Vertical1");
+		_horizontal = Input.GetAxis("Horizontal2");
+		_vertical = Input.GetAxis("Vertical2");
 		
 		Vector3 targetVelocity = new Vector3(_horizontal, 0, _vertical);
 		targetVelocity = transform.rotation*targetVelocity;
