@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	HealthBar healthBar;
+	HealthBarEnemy healthBar;
 
 	//stats
 	public enum EnemyLevel{ Weak, Intermadiate, Strong};
@@ -22,9 +22,15 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		healthBar = gameObject.GetComponent<HealthBar>();
+		healthBar = gameObject.GetComponent<HealthBarEnemy>();
 		healthBar.maxhp = hp;
 		healthBar.hp = hp;
+
+		/*if(team == "Red")
+			change asset color
+		else
+			change asset color
+		 */
 	}
 	
 	// Update is called once per frame

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 131: {fileID: 13100000}
   m_Layer: 0
-  m_Name: HealthBar
+  m_Name: HealthBarEnemy
   m_TagString: HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

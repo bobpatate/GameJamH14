@@ -91,7 +91,7 @@ GameObject:
   - 65: {fileID: 269669571}
   - 132: {fileID: 269669573}
   - 114: {fileID: 269669572}
-  - 114: {fileID: 269669574}
+  - 114: {fileID: 269669564}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,6 +115,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &269669564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269669562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdcfb357b57dbd4a9af3a830f1b351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  maxhp: 0
+  healthbarWidth: 35
+  healthbarMaxWidth: 35
+  myHealthbar: {fileID: 100000, guid: b3a7e2325e57ec4469f1e1418b8ba97b, type: 2}
 --- !u!114 &269669565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +231,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1723322408}
   m_GameObject: {fileID: 269669562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b663feba759ab974a9f99cc897ebf364, type: 3}
   m_Name: 
@@ -250,22 +266,6 @@ GUIText:
     rgba: 4280204356
   m_PixelCorrect: 1
   m_RichText: 1
---- !u!114 &269669574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 269669562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccdcfb357b57dbd4a9af3a830f1b351e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  maxhp: 0
-  healthbarWidth: 0
-  healthbarMaxWidth: 35
-  myHealthbar: {fileID: 100000, guid: b3a7e2325e57ec4469f1e1418b8ba97b, type: 2}
 --- !u!1 &599462265
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +576,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 600e0e7bdc114f8418dc5a86eea7ded5, type: 2}
       propertyPath: team
       value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 600e0e7bdc114f8418dc5a86eea7ded5, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500002, guid: 600e0e7bdc114f8418dc5a86eea7ded5, type: 2}
