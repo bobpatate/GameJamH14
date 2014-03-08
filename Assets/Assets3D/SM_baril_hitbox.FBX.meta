@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b25ef462d16350489d8206423a02760
+guid: 793a37c0885577148994c2778d9e0bed
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,8 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder001
-    4300002: baril
+    4300000: baril_hitbox
     9500000: //RootNode
   materials:
     importMaterials: 1
