@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour {
 		public string nom;
 		public int tier;
 	}
+
 	private Ressource[] inventaire = new Ressource[10];
 	private bool isInCollectingRange = false;
 	private bool showCollectTimeBar = false;
