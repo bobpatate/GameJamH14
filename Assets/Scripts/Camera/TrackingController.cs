@@ -28,7 +28,7 @@ public class TrackingController : MonoBehaviour
     {
         if (target != null)
         {
-			Vector3 targetPosition = target.transform.position + Vector3.up * distance;
+			Vector3 targetPosition = target.transform.position + Vector3.up * distance + Vector3.back * (distance/4);
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, rigidity);
 

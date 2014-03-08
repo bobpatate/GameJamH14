@@ -7,13 +7,17 @@ public class PlayerCombat : MonoBehaviour {
 	float strength = 5.0f;
 	float endurance = 1.0f;
 	float speed = 1.0f;
-	float hp = 100.0f;
+	float maxhp = 15.0f;
+	float hp = 15.0f;
+
 	public string team;
 
 	bool isInBattle = false;
 	bool enemyPlayed = true;
 	float nextAttack;
 	Enemy enemy;
+
+	float tempsRespawn = 5.0f;
 
 	PlayerController playerControllerScript;
 
@@ -60,7 +64,11 @@ public class PlayerCombat : MonoBehaviour {
 	}
 
 	void Respawn(){
+		isInBattle = false;
+		playerControllerScript.enabled = true;
+		hp = maxhp;
 
+		gameObject.transform.position = GameObject.Find("Merchant").transform.position + Vector3.forward*2;
 	}
 
 

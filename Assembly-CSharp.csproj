@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\HealthBarEnemy.cs" />
      <Compile Include="Assets\Scripts\GUI\GUI_test.cs" />
+     <Compile Include="Assets\Scripts\Model\ItemBuilder.cs" />
      <Compile Include="Assets\Scripts\Model\ItemType.cs" />
      <Compile Include="Assets\Scripts\Model\Recipe.cs" />
      <Compile Include="Assets\Scripts\Model\Ressource.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInventory.cs" />
      <Compile Include="Assets\Scripts\RessourceStats.cs" />
+     <Compile Include="Assets\Scripts\Test\ItemBuilderTest.cs" />
      <None Include="Assets\Assets3D\materials\shader_capsule.shader" />
      <None Include="Assets\Assets3D\materials\shader_character.shader" />
   </ItemGroup>
