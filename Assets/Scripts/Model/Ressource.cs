@@ -1,7 +1,5 @@
-﻿/*
-public struct Ressource
+﻿public struct Ressource
 {
     public string nom;
     public int tier;
 }
-*/
