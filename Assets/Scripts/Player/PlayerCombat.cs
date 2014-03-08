@@ -95,7 +95,7 @@ public class PlayerCombat : MonoBehaviour {
 			isInBattle = false;
 			print("Soyonara!!!");
 			enemy = null;
-			other.gameObject.GetComponent<Enemy>().CombatEnded();
+			other.gameObject.transform.parent.GetComponent<Enemy>().CombatEnded();
 		}
 	}
 }
