@@ -76,6 +76,7 @@ public class PlayerCombat : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy" && !isInBattle){
 			if(other.gameObject.GetComponent<Enemy>().getTeam() != team){
+				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
 				isInBattle = true;
 				print("Fightooo!!!");
