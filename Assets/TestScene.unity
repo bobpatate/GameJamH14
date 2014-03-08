@@ -257,10 +257,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1373010964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad72d485b359bc34cb3249f7d0c97f6f, type: 3}
+  m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
+  distance: 10
   rigidity: .100000001
   target: {fileID: 1756744702}
 --- !u!124 &1373010966
@@ -328,9 +328,9 @@ GameObject:
   - 33: {fileID: 1599045130}
   - 65: {fileID: 1599045129}
   - 23: {fileID: 1599045128}
-  - 114: {fileID: 1599045132}
   - 65: {fileID: 1599045133}
   - 54: {fileID: 1599045134}
+  - 114: {fileID: 1599045132}
   m_Layer: 0
   m_Name: Cube 2
   m_TagString: Untagged
@@ -350,7 +350,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 426df974fcde9f247af6f631d7459788, type: 2}
+  - {fileID: 2100000, guid: ab73d69e05a1ecf4a9714522a07fdf15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -397,13 +397,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1599045127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf75c714e28921f40a32cb8e17b33935, type: 3}
+  m_Script: {fileID: 11500000, guid: c90537923da0e334eaea21a827c99e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: 566572746963616c2d5032
-  rotationAxis: 486f72697a6f6e74616c2d5032
-  angularSpeed: 90
-  movementSpeed: 1
+  _maxVelocityChange: 5
+  _speed: 5
+  horizontal: Horizontal2
+  vertical: Vertical2
 --- !u!65 &1599045133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1756744702
 GameObject:
@@ -442,9 +442,9 @@ GameObject:
   - 33: {fileID: 1756744705}
   - 65: {fileID: 1756744704}
   - 23: {fileID: 1756744703}
-  - 114: {fileID: 1756744707}
   - 65: {fileID: 1756744708}
   - 54: {fileID: 1756744709}
+  - 114: {fileID: 1756744707}
   m_Layer: 0
   m_Name: Cube 1
   m_TagString: Untagged
@@ -464,7 +464,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0db788fe26c854449a0038537172c9a3, type: 2}
+  - {fileID: 2100000, guid: 61b42199ffb884c4b9ca308e4538ad4f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -511,13 +511,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756744702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf75c714e28921f40a32cb8e17b33935, type: 3}
+  m_Script: {fileID: 11500000, guid: c90537923da0e334eaea21a827c99e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementAxis: 566572746963616c2d5031
-  rotationAxis: 486f72697a6f6e74616c2d5031
-  angularSpeed: 90
-  movementSpeed: 1
+  _maxVelocityChange: 5
+  _speed: 5
+  horizontal: Horizontal1
+  vertical: Vertical1
 --- !u!65 &1756744708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1835188068
 GameObject:
@@ -575,7 +575,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 92ad3cc52810782418f74cccf0908885, type: 2}
+  - {fileID: 2100000, guid: a44d3e165ca409d498de9b41f40aa4f8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -704,10 +704,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926596100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad72d485b359bc34cb3249f7d0c97f6f, type: 3}
+  m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
+  distance: 10
   rigidity: .100000001
   target: {fileID: 1599045127}
 --- !u!124 &1926596102
