@@ -21,6 +21,8 @@ public class PlayerCombat : MonoBehaviour {
 
 	PlayerController playerControllerScript;
 
+	public GameObject damageText;
+
 	// Use this for initialization
 	void Start () {
 		nextAttack = Time.time + 1.5f;
@@ -52,6 +54,9 @@ public class PlayerCombat : MonoBehaviour {
 		enemyPlayed = true;
 		hp -= damage-endurance;
 		print ("Player hp left "  + hp);
+		GameObject text = (GameObject)Instantiate (damageText);
+		text.transform.position = transform.position;
+		text.GetComponent<DamageTextController> ().Amount = (int)(damage - endurance);
 
 		if(hp <= 0){
 			print ("You dead");

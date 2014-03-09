@@ -1668,6 +1668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 20
   rigidity: .100000001
+  angle: 75
+  offset: 5
   target: {fileID: 1756744702}
 --- !u!124 &1373010966
 Behaviour:
@@ -1931,6 +1933,7 @@ MonoBehaviour:
   maxhp: 15
   hp: 15
   team: Blue
+  damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!114 &1599045136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,6 +2294,7 @@ MonoBehaviour:
   maxhp: 15
   hp: 15
   team: Red
+  damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!114 &1756744711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2553,6 +2557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 20
   rigidity: .100000001
+  angle: 75
+  offset: 5
   target: {fileID: 1599045127}
 --- !u!124 &1926596102
 Behaviour:
