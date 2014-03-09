@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour {
 	private Transform playerPos;
 	private Vector3 targetDirection;
 	private Transform myTransform;
-	private int force = 1000;
+	private int force = 5;
 	private Vector3 posInit;
 
 	public GameObject damageText;
@@ -47,35 +47,35 @@ public class Enemy : MonoBehaviour {
 		if(level == EnemyLevel.Weak){
 			strength = 3.0f;
 			endurance = 0.5f;
-			speed = 1.0f;
+			speed = 2.5f;
 			hp = 20.0f;
 			maxhp = 20.0f;
 		}
 		else if(level == EnemyLevel.Intermediate){
 			strength = 5.0f;
 			endurance = 2.0f;
-			speed = 1.4f;
+			speed = 3.9f;
 			hp = 35.0f;
 			maxhp = 35.0f;
 		}
 		else if(level == EnemyLevel.Strong){
 			strength = 8.0f;
 			endurance = 3.0f;
-			speed = 1.8f;
+			speed = 1.8f+1.5f;
 			hp = 50.0f;
 			maxhp = 50.0f;
 		}
 		else if(level == EnemyLevel.SuperStrong){
 			strength = 13.0f;
 			endurance = 6.0f;
-			speed = 2.0f;
+			speed = 3.5f;
 			hp = 80.0f;
 			maxhp = 80.0f;
 		}
 		else if(level == EnemyLevel.Boss){
 			strength = 19.0f;
 			endurance = 11.0f;
-			speed = 2.3f;
+			speed = 0f;
 			hp = 130.0f;
 			maxhp = 130.0f;
 		}
@@ -112,11 +112,13 @@ public class Enemy : MonoBehaviour {
 
 				playerPos = playerGO.transform;
 				targetDirection = (playerPos.position - myTransform.position);
-				transform.LookAt(rigidbody.velocity);
+
 
 				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
-				gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
+				gameObject.transform.position+=targetDirection*speed*Time.deltaTime;
+				//gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
+				transform.LookAt(targetDirection);
 			}
 			else{
 				moveToStartingPos();
@@ -137,7 +139,8 @@ public class Enemy : MonoBehaviour {
 			
 			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 			targetDirection.Normalize();
-			gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
+			//gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
+			gameObject.transform.position+=targetDirection*speed*Time.deltaTime;
 		}
 	}
 	//Actions
@@ -172,7 +175,6 @@ public class Enemy : MonoBehaviour {
 		playerSeen = false;
 		player = playerCollided;
 		rigidbody.velocity = new Vector3(0,0,0);
-		print ("Onii-chan, yamete!!!");
 	}
 
 	public void CombatEnded(){
