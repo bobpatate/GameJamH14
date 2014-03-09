@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c73d2540fd15b64b81f5ca47118dac1
+guid: baea60118888e5c4781fc964b5cd428f
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -24,9 +24,9 @@ ModelImporter:
     100036: bone_spine_0
     100038: bone_spine_1
     100040: bone_spine_2
-    100042: Object005
-    100044: //RootNode
-    100046: SK_mouse
+    100042: boot_L
+    100044: boot_R
+    100046: //RootNode
     400000: bone_ankle_L
     400002: bone_ankle_R
     400004: bone_armbot_L
@@ -48,15 +48,17 @@ ModelImporter:
     400036: bone_spine_0
     400038: bone_spine_1
     400040: bone_spine_2
-    400042: Object005
-    400044: //RootNode
-    400046: SK_mouse
-    4300000: Object005
-    4300002: SK_mouse
-    7400000: Tstance
+    400042: boot_L
+    400044: boot_R
+    400046: //RootNode
+    2300000: boot_L
+    2300002: boot_R
+    3300000: boot_L
+    3300002: boot_R
+    4300000: boot_R
+    4300002: boot_L
+    7400000: Idle
     9500000: //RootNode
-    13700000: Object005
-    13700002: SK_mouse
   materials:
     importMaterials: 1
     materialName: 0
@@ -73,17 +75,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Tstance
+      name: Idle
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 45
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -139,8 +141,6 @@ ModelImporter:
       - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R/bone_armtop_R/bone_armbot_R
         weight: 1
       - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R/bone_armtop_R/bone_armbot_R/bone_hand_R
-        weight: 1
-      - path: SK_mouse
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

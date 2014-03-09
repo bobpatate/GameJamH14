@@ -12,13 +12,13 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: attacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: gathering
     m_Type: 4
@@ -472,7 +472,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 3c73d2540fd15b64b81f5ca47118dac1, type: 3}
+  - {fileID: 7400000, guid: baea60118888e5c4781fc964b5cd428f, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 168, y: -72, z: 0}
   m_IKOnFeet: 0
