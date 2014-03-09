@@ -18,6 +18,8 @@ public class TrackingController : MonoBehaviour
     /// 0.01f = la caméra est plutôt lente
     /// </summary>
     public float rigidity = 0.1f;
+	public float angle = 75;
+	public float offset=5;
 
     /// <summary>
     /// L'objet suivi par la caméra.
@@ -28,11 +30,11 @@ public class TrackingController : MonoBehaviour
     {
         if (target != null)
         {
-			Vector3 targetPosition = target.transform.position + Vector3.up * distance + Vector3.back * (distance/4);
+			Vector3 targetPosition = target.transform.position + Vector3.up * distance + Vector3.back * offset;
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, rigidity);
 
-			transform.rotation = Quaternion.Euler(75, 0, 0);
+			transform.rotation = Quaternion.Euler(angle, 0, 0);
         }
     }
 }

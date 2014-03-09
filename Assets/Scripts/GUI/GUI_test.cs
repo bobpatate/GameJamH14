@@ -287,7 +287,7 @@ public class GUI_test : MonoBehaviour {
 		Texture2D lineTex= new Texture2D(1, 1);
 		Color tempColor = GUI.color;
 		GUI.color = Color.black;
-		GUI.DrawTexture(new Rect(Screen.width / 2, 0, 1, Screen.height), lineTex);
+		GUI.DrawTexture(new Rect(Screen.width / 2-1, 0, 3, Screen.height), lineTex);
 		GUI.color = tempColor;
 	
 	}

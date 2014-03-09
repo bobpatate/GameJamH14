@@ -15,7 +15,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: .5, g: .5, b: .5, a: 1}
   m_FogMode: 2
-  m_FogDensity: .0199999996
+  m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: .462259889, g: .647058845, b: .437716275, a: 1}
@@ -11243,23 +11243,23 @@ Transform:
   m_LocalPosition: {x: 96.1388626, y: 0, z: 33.1235504}
   m_LocalScale: {x: -1, y: 1, z: -1}
   m_Children:
-  - {fileID: 1662925427}
-  - {fileID: 1198028900}
-  - {fileID: 149424319}
-  - {fileID: 2128542244}
-  - {fileID: 117786530}
-  - {fileID: 1049992600}
-  - {fileID: 1754987694}
-  - {fileID: 1164088696}
   - {fileID: 192586903}
+  - {fileID: 1580208762}
+  - {fileID: 1320353323}
+  - {fileID: 421229713}
+  - {fileID: 1917749551}
+  - {fileID: 117786530}
+  - {fileID: 2128542244}
+  - {fileID: 1662925427}
+  - {fileID: 1164088696}
+  - {fileID: 1292168505}
   - {fileID: 1331692040}
   - {fileID: 2037812760}
   - {fileID: 370751123}
-  - {fileID: 1320353323}
-  - {fileID: 1580208762}
-  - {fileID: 1292168505}
-  - {fileID: 1917749551}
-  - {fileID: 421229713}
+  - {fileID: 1049992600}
+  - {fileID: 1198028900}
+  - {fileID: 1754987694}
+  - {fileID: 149424319}
   - {fileID: 18913797}
   m_Father: {fileID: 1973429922}
 --- !u!1 &745279901
@@ -17648,6 +17648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 20
   rigidity: .100000001
+  angle: 50
+  offset: 17
   target: {fileID: 265955526}
 --- !u!124 &1373010966
 Behaviour:
@@ -17681,7 +17683,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -20661,7 +20663,7 @@ Transform:
   m_GameObject: {fileID: 1637811978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1343479290}
   - {fileID: 235246290}
@@ -24181,7 +24183,7 @@ Transform:
   m_GameObject: {fileID: 1896485349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 990295631}
   - {fileID: 805783592}
@@ -27432,6 +27434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 20
   rigidity: .100000001
+  angle: 50
+  offset: 17
   target: {fileID: 1889867232}
 --- !u!124 &2139143963
 Behaviour:
@@ -27465,7 +27469,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -27482,7 +27486,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139143961}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalRotation: {x: .382683486, y: 0, z: 0, w: .923879564}
   m_LocalPosition: {x: -1.48032439, y: 5, z: -1.11504841}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
