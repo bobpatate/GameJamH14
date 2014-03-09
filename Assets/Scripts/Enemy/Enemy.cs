@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour {
 
 				playerPos = playerGO.transform;
 				targetDirection = (playerPos.position - myTransform.position);
-				transform.LookAt(playerPos.position);
+			//	transform.LookAt(playerPos.position);
 
 				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
@@ -179,6 +179,7 @@ public class Enemy : MonoBehaviour {
 		hp = maxhp;
 		healthBar.hp = maxhp;
 		transform.position = new Vector3 (0, 0, 300);
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
 	}
 
