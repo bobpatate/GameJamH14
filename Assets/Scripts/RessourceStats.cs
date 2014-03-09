@@ -15,7 +15,7 @@ public class RessourceStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		shaderHarvested = Shader.Find("Bumped Diffuse");
+		shaderHarvested = Shader.Find("Shader Forge/shader_disabled");
 		shader = Shader.Find("Shader Forge/shader_corrosif");
 	}
 	
