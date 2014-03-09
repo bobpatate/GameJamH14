@@ -19,7 +19,7 @@ public static class ItemBuilder
 
     // --- MAGIE VAUDOU A PARTIR D'ICI ---
 
-    private const int MinTier = 0;
+    private const int MinTier = 1;
     private const int MaxTier = 3;
     private const float Variance = 0.3f; // Variance tier +/-
 

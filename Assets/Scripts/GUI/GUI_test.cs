@@ -81,6 +81,13 @@ public class GUI_test : MonoBehaviour {
 		PlayerEquipment equipementP2;
 		equipementP2 = Player2.GetComponent<PlayerEquipment>();
 
+		PlayerCombat PC1 = Player1.GetComponent<PlayerCombat>();
+		PlayerCombat PC2 = Player2.GetComponent<PlayerCombat>();
+
+		float pct1, pct2;
+		pct1 = (float)PC1.hp / (float)PC1.maxhp;
+		pct2 = (float)PC2.hp / (float)PC2.maxhp;
+
 		for (int i = 0; i < 10; i++) {
 			if(inventoryP1.inventaire[i].nom == "Metal" && inventoryP1.inventaire[i].tier == 1){
 				inv[i] = iconMetalT1;
@@ -218,7 +225,8 @@ public class GUI_test : MonoBehaviour {
 		////
 		/// Healtbar
 		GUI.Box (new Rect (Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);
-		GUI.Box (new Rect (Screen.width*6/1617, Screen.height - Screen.height*173/910, Screen.width*238/1617, Screen.height*18/910), "", currentStyle);
+		//vie laaaaaa
+		GUI.Box (new Rect (Screen.width*6/1617, Screen.height - Screen.height*173/910, (int)(Screen.width*238/1617*pct1), Screen.height*18/910), "", currentStyle);
 		/// 
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), inv[4]);
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), inv[9]);
@@ -244,7 +252,7 @@ public class GUI_test : MonoBehaviour {
 		/// 
 		/// 
 		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), blueBG);
-		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
+		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,(int)(Screen.width*250/1617*pct2),Screen.height*30/910), "");
 		////
 		/// /// Healtbar
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);

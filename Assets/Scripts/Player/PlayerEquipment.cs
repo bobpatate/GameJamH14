@@ -14,7 +14,11 @@ public class PlayerEquipment : MonoBehaviour {
 		boots = 1;
 		gathering = 1;
 	}
-	
+
+	public void GiveObject(ItemType item) {
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
