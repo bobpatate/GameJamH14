@@ -1779,6 +1779,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
   m_RootGameObject: {fileID: 642996236}
@@ -7213,7 +7217,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278716671
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &336182693
 GameObject:
@@ -8035,6 +8039,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 767405b44441e93459d91aed1ab6bb7f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 767405b44441e93459d91aed1ab6bb7f, type: 2}
   m_RootGameObject: {fileID: 1868741489}
@@ -8411,6 +8419,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
   m_RootGameObject: {fileID: 1610966216}
@@ -8785,7 +8797,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: m_Color.rgba
-      value: 4294903855
+      value: 4279177215
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: team
@@ -12727,7 +12739,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: m_Color.rgba
-      value: 4294903855
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
@@ -13871,7 +13883,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4283453695
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &645134861
 GameObject:
@@ -14338,7 +14350,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: m_Color.rgba
-      value: 4294903855
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
@@ -18230,7 +18242,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278716671
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &832949492
 GameObject:
@@ -18840,6 +18852,10 @@ Prefab:
     - target: {fileID: 11400000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: team
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
@@ -21551,7 +21567,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294903855
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1004416154
 GameObject:
@@ -21823,7 +21839,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294903855
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1016740376
 GameObject:
@@ -26043,6 +26059,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
   m_RootGameObject: {fileID: 1601425610}
@@ -26325,7 +26345,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: m_Color.rgba
-      value: 4294903855
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
@@ -26855,7 +26875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 12200000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: m_Color.rgba
-      value: 4294903855
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
@@ -29005,7 +29025,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294903855
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1473016836
 GameObject:
@@ -29354,7 +29374,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294903855
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1503252611
 GameObject:
@@ -31743,7 +31763,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4283453695
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1601838520
 GameObject:
@@ -31924,7 +31944,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278716671
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1612456272
 GameObject:
@@ -32581,6 +32601,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96159e4a1e2dc144fb5edfb247ff4975, type: 2}
   m_RootGameObject: {fileID: 2110007795}
@@ -33206,7 +33230,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4282927359
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1665862112
 GameObject:
@@ -33697,6 +33721,10 @@ Prefab:
     - target: {fileID: 11400004, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
       propertyPath: team
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
@@ -34774,6 +34802,10 @@ Prefab:
     - target: {fileID: 11400004, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
       propertyPath: team
       value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
@@ -36851,6 +36883,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b925a919d9852943a4b5a263c53dbd2, type: 2}
   m_RootGameObject: {fileID: 1892265816}
@@ -37339,7 +37375,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278716671
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1868819226
 GameObject:
@@ -37715,7 +37751,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4282927359
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1882677221
 GameObject:
@@ -38179,7 +38215,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4282927359
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &1892425417
 GameObject:
@@ -41128,6 +41164,10 @@ Prefab:
       propertyPath: team
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 12200000, guid: 767405b44441e93459d91aed1ab6bb7f, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4279177215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 767405b44441e93459d91aed1ab6bb7f, type: 2}
   m_RootGameObject: {fileID: 331895697}
@@ -42383,7 +42423,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4283453695
+    rgba: 4279177215
   m_Size: 2
 --- !u!1001 &2112538711
 Prefab:
@@ -43398,7 +43438,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294903855
+    rgba: 4279177215
   m_Size: 2
 --- !u!1 &2146675290
 GameObject:
