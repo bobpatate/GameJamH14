@@ -78,6 +78,7 @@ public class PlayerCombat : MonoBehaviour {
 	}
 
 	void Respawn(){
+		GetComponent<PlayerInventory>().InitializeInventory();
 		isInBattle = false;
 		playerControllerScript.enabled = true;
 		hp = maxhp;

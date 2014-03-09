@@ -21,6 +21,8 @@ public class PlayerInventory : MonoBehaviour {
 	private bool isInCraftingRange = false;
 	private GameObject merchant;
 	private string collectibleName;
+
+	private int nbRessources = 0;
 	// Use this for initialization
 	void Start () {
 		InitializeInventory();
@@ -50,8 +52,10 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(KeyCode.E))
 			{
-				giveInventoryToMerchant(merchant);
 				RestoreHealthPoints();
+				if ( nbRessources >= 4 )
+					giveInventoryToMerchant(merchant);
+
 			}
 		}
 	}
@@ -169,6 +173,7 @@ public class PlayerInventory : MonoBehaviour {
 				{
 					inventaire[i].nom = collectible.name;
 					inventaire[i].tier = collectible.GetComponent<RessourceStats>().tier;
+					nbRessources++;
 					print ("Successfully added to inventory : " + inventaire[i].nom + " " + inventaire[i].tier);
 					return;
 				}
@@ -183,8 +188,8 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			inventaire[i].nom = "";
 			inventaire[i].tier = -1;
-
 		}
+		nbRessources = 0;
 	}
 
 	//Fonction qui retourne vrai si l'inventaire est plein
