@@ -26,6 +26,7 @@ ModelImporter:
     100040: bone_spine_2
     100042: Object005
     100044: //RootNode
+    100046: SK_mouse
     400000: bone_ankle_L
     400002: bone_ankle_R
     400004: bone_armbot_L
@@ -49,10 +50,13 @@ ModelImporter:
     400040: bone_spine_2
     400042: Object005
     400044: //RootNode
+    400046: SK_mouse
     4300000: Object005
+    4300002: SK_mouse
     7400000: Take 001
     9500000: //RootNode
     13700000: Object005
+    13700002: SK_mouse
   materials:
     importMaterials: 1
     materialName: 0
@@ -67,7 +71,79 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone_pelvis_R
+        weight: 1
+      - path: bone_pelvis_R/bone_legtop_R
+        weight: 1
+      - path: bone_pelvis_R/bone_legtop_R/bone_legbot_R
+        weight: 1
+      - path: bone_pelvis_R/bone_legtop_R/bone_legbot_R/bone_ankle_R
+        weight: 1
+      - path: bone_pelvis_R/bone_pelvis_L
+        weight: 1
+      - path: bone_pelvis_R/bone_pelvis_L/bone_legtop_L
+        weight: 1
+      - path: bone_pelvis_R/bone_pelvis_L/bone_legtop_L/bone_legbot_L
+        weight: 1
+      - path: bone_pelvis_R/bone_pelvis_L/bone_legtop_L/bone_legbot_L/bone_ankle_L
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_neck
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_neck/bone_head
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_L
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_L/bone_armtop_L
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_L/bone_armtop_L/bone_armbot_L
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_L/bone_armtop_L/bone_armbot_L/bone_hand_L
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R/bone_armtop_R
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R/bone_armtop_R/bone_armbot_R
+        weight: 1
+      - path: bone_pelvis_R/bone_spine_0/bone_spine_1/bone_spine_2/bone_shoulder_R/bone_armtop_R/bone_armbot_R/bone_hand_R
+        weight: 1
+      - path: SK_mouse
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
