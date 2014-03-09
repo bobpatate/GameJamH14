@@ -4217,7 +4217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ressourceDelay: 4
-  playerControllerScript: {fileID: 265955532}
+  playerNumber: 1
 --- !u!114 &265955530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,6 +5515,10 @@ Prefab:
       propertyPath: guiText
       value: 
       objectReference: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+    - target: {fileID: 11400008, guid: f385f663073c2f64ebe401e303cc7ec6, type: 2}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f385f663073c2f64ebe401e303cc7ec6, type: 2}
   m_RootGameObject: {fileID: 1889867232}
@@ -24230,6 +24234,10 @@ Prefab:
       propertyPath: playerControllerScript
       value: 
       objectReference: {fileID: 265955532}
+    - target: {fileID: 11400008, guid: b4e1ea78ae9681c4f992e664059c1880, type: 2}
+      propertyPath: playerNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4e1ea78ae9681c4f992e664059c1880, type: 2}
   m_RootGameObject: {fileID: 265955526}
@@ -26621,7 +26629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ressourceDelay: 4
-  playerControllerScript: {fileID: 1889867238}
+  playerNumber: 2
 --- !u!114 &1889867236
 MonoBehaviour:
   m_ObjectHideFlags: 0
