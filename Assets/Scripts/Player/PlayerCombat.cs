@@ -85,8 +85,8 @@ public class PlayerCombat : MonoBehaviour {
 			}
 		}
 
-		if (other.tag == "HealthRestore" && !isInBattle){
-			print("Health found");
+		if(other.gameObject.name == "Fight_Trigger" && !isInBattle){
+			other.gameObject.transform.parent.GetComponent<Enemy>().PlayerSeen(gameObject.transform.parent.gameObject);
 		}
 	}
 
