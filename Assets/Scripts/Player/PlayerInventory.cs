@@ -21,8 +21,6 @@ public class PlayerInventory : MonoBehaviour {
 	private bool isInCraftingRange = false;
 	private GameObject merchant;
 
-	ItemType itemType;
-
 	// Use this for initialization
 	void Start () {
 		InitializeInventory();
@@ -186,7 +184,11 @@ public class PlayerInventory : MonoBehaviour {
 	}
 
 	private void giveInventoryToMerchant(GameObject merchant){
-		itemType = ItemBuilder.Pick(inventaire);
+		ItemType itemType = ItemBuilder.Pick(inventaire);
+		if (itemType != null) {
+			GetComponent<PlayerEquipement>().GiveItem (itemType);
+			InitializeInventory();
+		}
 	}
 
 	private void RestoreHealthPoints(){
