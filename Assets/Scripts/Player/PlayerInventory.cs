@@ -49,7 +49,7 @@ public class PlayerInventory : MonoBehaviour {
 				playerControllerScript.enabled = false;
 
 				collectingStartTime = Time.time;
-				collectingTime = Time.time + collectible.GetComponent<RessourceStats>().collectingTime / collectingSpeed;
+				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
 				collectibleName = collectible.name;
 			}
 			else if ((Input.GetKeyDown(KeyCode.RightControl)|| Input.GetButtonUp("joystick 2 button 0")) && !isCollecting && playerNumber==2)
@@ -60,7 +60,7 @@ public class PlayerInventory : MonoBehaviour {
 				playerControllerScript.enabled = false;
 				
 				collectingStartTime = Time.time;
-				collectingTime = Time.time + collectible.GetComponent<RessourceStats>().collectingTime / collectingSpeed;
+				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
 				collectibleName = collectible.name;
 			}
 

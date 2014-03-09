@@ -228,7 +228,7 @@ public class GUI_test : MonoBehaviour {
 			equipP2[3] = iconGatT3;
 		}
 
-		GUI.DrawTexture (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,Screen.height*150/910), redBG);
+		GUI.DrawTexture (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,Screen.height*150/910), blueBG);
 		GUI.Box (new Rect (0 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
 		////
 		/// Healtbar
@@ -266,7 +266,7 @@ public class GUI_test : MonoBehaviour {
 		/// 
 		/// 
 		/// 
-		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), blueBG);
+		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), redBG);
 		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
 		////
 		/// /// Healtbar
