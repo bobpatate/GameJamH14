@@ -26,10 +26,8 @@ public class Enemy : MonoBehaviour {
 
 	private Transform playerPos;
 	private Vector3 targetDirection;
-	private float maxVelocity = 5.0f;
 	private Transform myTransform;
 	private int force = 1000;
-	private Vector3 Offset;
 
 	// Use this for initialization
 	void Start () {
@@ -91,21 +89,22 @@ public class Enemy : MonoBehaviour {
 			Attacks ();
 		}
 
-		else if(!isInBattle && playerSeen){
-			if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
-			{
-				playerPos = playerGO.transform;
-				if (playerPos.position.z < 0){print("sup");
-					targetDirection = (playerPos.position - myTransform.position) + Offset;
-				}
-				else{print("sup2");
-					targetDirection = (playerPos.position - myTransform.position) - Offset;
-				}
+		else if(!isInBattle && playerSeen && playerGO.GetComponent<PlayerCombat>().team != team){
+			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
+			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
 
-				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
-				targetDirection.Normalize();
-				rigidbody.AddForce(targetDirection * force * Time.deltaTime);
+			playerPos = playerGO.transform;
+
+			if (playerPos.position.z < 0){
+				targetDirection = (playerPos.position - myTransform.position);
 			}
+			else{
+				targetDirection = (playerPos.position - myTransform.position);
+			}
+
+			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
+			targetDirection.Normalize();
+			gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
 		}
 	}
 
@@ -136,12 +135,14 @@ public class Enemy : MonoBehaviour {
 		isInBattle = true;
 		playerSeen = false;
 		player = playerCollided;
+		rigidbody.velocity = new Vector3(0,0,0);
 		print ("Onii-chan, yamete!!!");
 	}
 
 	public void CombatEnded(){
 		isInBattle = false;
 	}
+
 	void Die(){
 		healthBar.destroyToi();
 		Destroy (this.gameObject);
@@ -156,7 +157,11 @@ public class Enemy : MonoBehaviour {
 		playerGO = player;
 		playerSeen = true;
 	}
-
+	
+	public void PlayerGone(){
+		playerSeen = false;
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+	}
 
 	public string getTeam(){
 		return team;

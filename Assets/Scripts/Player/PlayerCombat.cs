@@ -100,5 +100,9 @@ public class PlayerCombat : MonoBehaviour {
 			enemy = null;
 			other.gameObject.transform.parent.GetComponent<Enemy>().CombatEnded();
 		}
+
+		else if(other.gameObject.name == "Detection_Trigger"){
+			other.transform.parent.gameObject.GetComponent<Enemy>().PlayerGone();
+		}
 	}
 }
