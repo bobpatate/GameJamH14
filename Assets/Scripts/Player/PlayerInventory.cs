@@ -50,8 +50,8 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(KeyCode.E))
 			{
-				RestoreHealthPoints();
 				giveInventoryToMerchant(merchant);
+				RestoreHealthPoints();
 			}
 		}
 	}
@@ -68,6 +68,9 @@ public class PlayerInventory : MonoBehaviour {
 			AddToInventory(collectible);
 			Destroy(collectible);
 			collectible = null;
+
+			PlayerEquipment playerEquipment = GetComponent<PlayerEquipment> ();
+			playerEquipment.UseTool (1);
 		}
 	}
 

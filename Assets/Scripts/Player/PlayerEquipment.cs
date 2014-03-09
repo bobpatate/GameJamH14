@@ -20,16 +20,19 @@ public class PlayerEquipment : MonoBehaviour {
         items[(int)Slots.Armor] = new Item(ItemType.ArmorT0);
         items[(int)Slots.Boots] = new Item(ItemType.BootsT0);
         items[(int)Slots.Tool] = new Item(ItemType.ToolT0);
-        this.UpdateStats();
+        this.UpdateStats(true);
 	}
 
-    private void UpdateStats()
+    private void UpdateStats(bool resetHP)
     {
         Stats stats = ItemType.CalculateStats(items.Select(i => i.Type).ToArray());
 
         PlayerCombat playerCombat = GetComponent<PlayerCombat>();
         playerCombat.strength = stats.Damage;
-        playerCombat.maxhp = playerCombat.hp = stats.HP;
+        playerCombat.maxhp = stats.HP;
+		if (resetHP || playerCombat.hp > playerCombat.maxhp) {
+			playerCombat.hp = playerCombat.maxhp;
+		}
 
         PlayerInventory playerInventory = GetComponent<PlayerInventory>();
         playerInventory.ressourceDelay = 4.0f / stats.GatheringSpeed;
@@ -59,7 +62,7 @@ public class PlayerEquipment : MonoBehaviour {
         if (item.Tier >= items[slot].Type.Tier)
         {
             items[slot] = new Item(item);
-            this.UpdateStats();
+            this.UpdateStats(false);
         }
     }
 
@@ -77,5 +80,6 @@ public class PlayerEquipment : MonoBehaviour {
         {
             items[(int)slot] = new Item(ItemType.List.FirstOrDefault(i => i.Slot == slot && i.Tier == 0));
         }
+		UpdateStats (false);
     }
 }

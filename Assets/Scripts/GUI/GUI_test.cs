@@ -69,6 +69,14 @@ public class GUI_test : MonoBehaviour {
 		return result;
 	}
 
+	string GetDurability(float durabilityRatio){
+		if (float.IsPositiveInfinity (durabilityRatio)) {
+			return "";
+		} else {
+			return Mathf.RoundToInt(durabilityRatio*100) + " %";
+		}
+	}
+
 	void OnGUI () {
 		InitStyles();
 
@@ -245,9 +253,13 @@ public class GUI_test : MonoBehaviour {
 		////
 		/// 
 		GUI.Box (new Rect (Screen.width*20/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP1[0]);
+		GUI.Label (new Rect (Screen.width * 25 / 1617, Screen.height - Screen.height * 40 / 910, 60, 20), GetDurability (equipementP1.swordDurability));
 		GUI.Box (new Rect (Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP1[1]);
+		GUI.Label (new Rect (Screen.width * 145 / 1617, Screen.height - Screen.height * 40 / 910, 60, 20), GetDurability (equipementP1.armorDurability));
 		GUI.Box (new Rect (Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP1[2]);
+		GUI.Label (new Rect (Screen.width * 265 / 1617, Screen.height - Screen.height * 40 / 910, 60, 20), GetDurability (equipementP1.bootsDurability));
 		GUI.Box (new Rect (Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP1[3]);
+		GUI.Label (new Rect (Screen.width * 385 / 1617, Screen.height - Screen.height * 40 / 910, 60, 20), GetDurability (equipementP1.gatheringDurability));
 		////
 		/// 
 		/// 
@@ -278,9 +290,13 @@ public class GUI_test : MonoBehaviour {
 		////
 		/// 
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*20/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[0]);
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width*25/1617 ,Screen.height - Screen.height*40/910,60,20), GetDurability(equipementP2.swordDurability));
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[1]);
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width*145/1617 ,Screen.height - Screen.height*40/910,60,20), GetDurability(equipementP2.armorDurability));
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[2]);
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width*265/1617 ,Screen.height - Screen.height*40/910,60,20), GetDurability(equipementP2.bootsDurability));
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[3]);
+		GUI.Label (new Rect (Screen.width / 2 + Screen.width*385/1617 ,Screen.height - Screen.height*40/910,60,20), GetDurability(equipementP2.gatheringDurability));
 	
 	
 		//Ligne du millieu
