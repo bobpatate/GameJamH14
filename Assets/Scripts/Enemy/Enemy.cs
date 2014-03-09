@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour {
 			Attacks ();
 		}
 
-		else if(!isInBattle && playerSeen && playerGO.GetComponent<PlayerCombat>().team != team){
+		else if(!isInBattle && playerSeen && playerGO.GetComponent<PlayerCombat>().team != team && !playerGO.GetComponent<PlayerCombat>().IsInBattle()){
 			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
 			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
 
