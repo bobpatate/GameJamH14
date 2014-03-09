@@ -111,7 +111,7 @@ public class PlayerInventory : MonoBehaviour {
 
 			//draw the filled-in part:
 			GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 10));
-			GUI.Box(new Rect(0,0, collectTimeBarLenght, 10),"", currentStyle);
+			GUI.Box(new Rect(4,4, collectTimeBarLenght, 10),"", currentStyle);
 			GUI.EndGroup();
 			GUI.EndGroup();
 		}
@@ -122,7 +122,7 @@ public class PlayerInventory : MonoBehaviour {
 		if( currentStyle == null )	
 		{
 			currentStyle = new GUIStyle( GUI.skin.box );
-			currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
+			currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 0.5f, 1f, 0.5f ) );
 		}
 		
 	}
