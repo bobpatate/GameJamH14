@@ -701,7 +701,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 751525093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5398177e17575742ace668b9bb78046, type: 3}
+  m_Script: {fileID: 11500000, guid: 0201ee245d055d2449466626b362ca5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &751525095
@@ -876,7 +876,7 @@ Transform:
   - {fileID: 970943870}
   - {fileID: 794874808}
   - {fileID: 596845826}
-  - {fileID: 1675210518}
+  - {fileID: 1133041226}
   m_Father: {fileID: 338598743}
 --- !u!1 &970943869
 GameObject:
@@ -1042,7 +1042,7 @@ GameObject:
   - 23: {fileID: 1133041228}
   - 95: {fileID: 1133041227}
   m_Layer: 0
-  m_Name: SM_sword
+  m_Name: SM_shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,11 +1054,11 @@ Transform:
   m_PrefabParentObject: {fileID: 400048, guid: 0f381dde977265d4c9c8e83236b5a0ec, type: 2}
   m_PrefabInternal: {fileID: 1709479998}
   m_GameObject: {fileID: 1133041225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: .470151514, y: .52816385, z: -.504775763, w: -.495178819}
+  m_LocalPosition: {x: .793210745, y: .0538006313, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1587660164}
+  m_Father: {fileID: 883706310}
 --- !u!95 &1133041227
 Animator:
   serializedVersion: 2
@@ -1068,7 +1068,7 @@ Animator:
   m_PrefabInternal: {fileID: 1709479998}
   m_GameObject: {fileID: 1133041225}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 17ef9585c2bcd8f4690d6488f78f9937, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 07c72262dae3e1d4fa5c7a4e7c4d0066, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
@@ -1087,7 +1087,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9600f561d00f0d64ab8ff70466d69d6e, type: 2}
+  - {fileID: 2100000, guid: 1a19ddf60d4c07b49b939f27701dde94, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1103,7 +1103,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1709479998}
   m_GameObject: {fileID: 1133041225}
-  m_Mesh: {fileID: 4300002, guid: 17ef9585c2bcd8f4690d6488f78f9937, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 07c72262dae3e1d4fa5c7a4e7c4d0066, type: 3}
 --- !u!1 &1189053089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1598,7 @@ Transform:
   m_LocalPosition: {x: -.186170116, y: 7.62939436e-08, z: 0}
   m_LocalScale: {x: 1.00000048, y: 1.00000012, z: 1.00000012}
   m_Children:
-  - {fileID: 1133041226}
+  - {fileID: 1675210518}
   m_Father: {fileID: 1905550317}
 --- !u!1 &1675210517
 GameObject:
@@ -1612,7 +1612,7 @@ GameObject:
   - 23: {fileID: 1675210520}
   - 95: {fileID: 1675210519}
   m_Layer: 0
-  m_Name: SM_shield
+  m_Name: SM_sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1628,7 +1628,7 @@ Transform:
   m_LocalPosition: {x: 3.42726935e-07, y: 2.97702314e-07, z: 1.02327235e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 883706310}
+  m_Father: {fileID: 1587660164}
 --- !u!95 &1675210519
 Animator:
   serializedVersion: 2
@@ -1638,7 +1638,7 @@ Animator:
   m_PrefabInternal: {fileID: 1709479998}
   m_GameObject: {fileID: 1675210517}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 07c72262dae3e1d4fa5c7a4e7c4d0066, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 17ef9585c2bcd8f4690d6488f78f9937, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
@@ -1657,7 +1657,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1a19ddf60d4c07b49b939f27701dde94, type: 2}
+  - {fileID: 2100000, guid: 9600f561d00f0d64ab8ff70466d69d6e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1673,7 +1673,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1709479998}
   m_GameObject: {fileID: 1675210517}
-  m_Mesh: {fileID: 4300000, guid: 07c72262dae3e1d4fa5c7a4e7c4d0066, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 17ef9585c2bcd8f4690d6488f78f9937, type: 3}
 --- !u!1001 &1709479998
 Prefab:
   m_ObjectHideFlags: 0
