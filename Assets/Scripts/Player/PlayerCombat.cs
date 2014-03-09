@@ -12,12 +12,19 @@ public class PlayerCombat : MonoBehaviour {
 
 	public string team;
 
-	bool isInBattle = false;
+	bool _isInBattle = false;
+	bool isInBattle {
+				get{ return _isInBattle;}
+				set {	_isInBattle = value; 
+						Animator animator = GetComponentInChildren<Animator> ();
+						animator.SetBool ("attacking", value);
+					}
+				}
 	bool enemyPlayed = true;
 	float nextAttack;
 	Enemy enemy;
 
-	float tempsRespawn = 5.0f;
+	float tempsRespawn = -1;
 
 	PlayerController playerControllerScript;
 
@@ -33,8 +40,16 @@ public class PlayerCombat : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (tempsRespawn > 0f) {
+			tempsRespawn -= Time.deltaTime;
+
+			if(tempsRespawn <= 0f) {
+				enemy.PlayerIsDead();
+				Respawn();
+			}
+		}
 		//Battle update
-		if(isInBattle && enemyPlayed && Time.time > nextAttack){
+		else if(isInBattle && enemyPlayed && Time.time > nextAttack){
 			nextAttack = Time.time + 1.5f;
 			enemyPlayed = false;
 			Attacks();
@@ -65,9 +80,10 @@ public class PlayerCombat : MonoBehaviour {
 		playerEquipment.UseArmor (1);
 
 		if(hp <= 0){
+			hp = 0;
+
 			print ("You dead");
-			enemy.PlayerIsDead();
-			Respawn();
+			tempsRespawn = 5f;
 		}
 	}
 
@@ -91,6 +107,7 @@ public class PlayerCombat : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.name == "Fight_Trigger" && !isInBattle){
 			if(other.gameObject.transform.parent.GetComponent<Enemy>().getTeam() != team){
+				playerControllerScript.LookAt(other.gameObject);
 				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
 				isInBattle = true;

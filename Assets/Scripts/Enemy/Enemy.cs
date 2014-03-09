@@ -96,8 +96,8 @@ public class Enemy : MonoBehaviour {
 		
 		else if(!isInBattle )
 		{
-
-			if(playerSeen && playerGO.GetComponent<PlayerCombat>().team != team && !playerGO.GetComponent<PlayerCombat>().IsInBattle() && Vector3.Distance(playerGO.transform.position,posInit)<maxPatrolDistance)
+			PlayerCombat combat = playerGO != null ? playerGO.GetComponent<PlayerCombat>() : null;
+			if(playerSeen && combat.team != team && !combat.IsInBattle() && combat.hp > 0 && Vector3.Distance(playerGO.transform.position,posInit) < maxPatrolDistance)
 			{
 				atInitPos=false;
 				rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour {
 
 				playerPos = playerGO.transform;
 				targetDirection = (playerPos.position - myTransform.position);
-				
+				//transform.LookAt(playerPos.position);
 
 				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour {
 		else
 		{
 			targetDirection = (posInit - myTransform.position);
-			
+			//transform.LookAt(posInit);
 			
 			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 			targetDirection.Normalize();

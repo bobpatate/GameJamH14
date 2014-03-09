@@ -234,7 +234,7 @@ public class GUI_test : MonoBehaviour {
 		/// Healtbar
 		GUI.Box (new Rect (Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);
 		//vie laaaaaa
-		GUI.Box (new Rect (Screen.width*6/1617, Screen.height - Screen.height*173/910, (int)(Screen.width*238/1617*pct1), Screen.height*18/910), "", currentStyle);
+		if(pct1 > 0) GUI.Box (new Rect (Screen.width*6/1617, Screen.height - Screen.height*173/910, (int)(pct1*Screen.width*238/1617), Screen.height*18/910), "", currentStyle);
 		/// 
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), inv[4]);
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), inv[9]);
@@ -267,7 +267,7 @@ public class GUI_test : MonoBehaviour {
 		/// 
 		/// 
 		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), blueBG);
-		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,(int)(Screen.width*250/1617*pct2),Screen.height*30/910), "");
+		if(pct2 > 0) GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,(int)(pct2*Screen.width*250/1617),Screen.height*30/910), "");
 		////
 		/// /// Healtbar
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);

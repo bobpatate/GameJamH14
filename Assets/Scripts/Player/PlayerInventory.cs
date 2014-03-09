@@ -8,8 +8,15 @@ public class PlayerInventory : MonoBehaviour {
 	private bool showCollectTimeBar = false;
 	private GameObject collectible;
 
-	private bool isCollecting = false;
-	public float ressourceDelay = 4.0f;
+	private bool _isCollecting = false;
+	private bool isCollecting {
+				get{ return _isCollecting; }
+				set {	_isCollecting = value; 
+						Animator animator = GetComponentInChildren<Animator> ();
+						animator.SetBool ("gathering", value);
+					}
+				}
+			public float ressourceDelay = 4.0f;
 	private float collectingStartTime;
 	private float collectingTime;
 

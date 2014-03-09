@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+	public string modelChild = "player_mouse";
 
 	private float _horizontal, _vertical;
 	
@@ -33,5 +34,15 @@ public class PlayerController : MonoBehaviour {
 		velocityChange.y = 0;
 		
 		rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
+
+		if(_horizontal != 0 || _vertical != 0)
+			transform.FindChild(modelChild).LookAt(transform.position + velocityChange);
+		
+		Animator animator = GetComponentInChildren<Animator>();
+		animator.SetBool("walking", _horizontal != 0 || _vertical != 0);
+	}
+
+	public void LookAt(GameObject objet){
+		transform.FindChild(modelChild).LookAt(objet.transform);
 	}
 }
