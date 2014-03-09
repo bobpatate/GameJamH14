@@ -10,12 +10,14 @@ public class Enemy : MonoBehaviour {
 	public float maxPatrolDistance=20;
 	public EnemyLevel level;
 	public string team;
+	public float respawnDelay=20;
 	float strength;
 	float endurance;
 	float speed;
 	float hp;
 	float maxhp;
 
+	bool isDead = false;
 	bool isInBattle = false;
 	PlayerCombat player;
 	bool playerPlayed = true;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour {
 	bool playerSeen = false;
 	GameObject playerGO;
 
+	private float respawnTime;
 	private Transform playerPos;
 	private Vector3 targetDirection;
 	private Transform myTransform;
@@ -89,7 +92,11 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isInBattle && playerPlayed && Time.time > nextAttack){
+		if (isDead) {
+			RespawnTimer();
+				}
+
+		else if(isInBattle && playerPlayed && Time.time > nextAttack){
 			playerPlayed = false;
 			Attacks ();
 		}
@@ -105,7 +112,7 @@ public class Enemy : MonoBehaviour {
 
 				playerPos = playerGO.transform;
 				targetDirection = (playerPos.position - myTransform.position);
-			//	transform.LookAt(playerPos.position);
+				transform.LookAt(rigidbody.velocity);
 
 				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
@@ -126,7 +133,7 @@ public class Enemy : MonoBehaviour {
 		else
 		{
 			targetDirection = (posInit - myTransform.position);
-			transform.LookAt(posInit);
+			transform.LookAt(rigidbody.velocity);
 			
 			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 			targetDirection.Normalize();
@@ -175,6 +182,7 @@ public class Enemy : MonoBehaviour {
 	void Die(){
 		//healthBar.destroyToi();
 		//Destroy (this.gameObject);
+		isDead = true;
 		CombatEnded ();
 		hp = maxhp;
 		healthBar.hp = maxhp;
@@ -182,6 +190,18 @@ public class Enemy : MonoBehaviour {
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
 	}
+	void RespawnTimer()
+	{
+				respawnTime += Time.deltaTime;
+				if (respawnTime >= respawnDelay) {
+			isDead=false;
+			respawnTime=0;
+						transform.position = posInit;
+			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
+			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;	
+			atInitPos=true;
+				}
+		}
 
 	public void PlayerIsDead(){
 		hp = maxhp;

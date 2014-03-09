@@ -944,6 +944,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &41869793
 Halo:
@@ -7206,6 +7207,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &331895703
 Halo:
@@ -7316,6 +7318,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &336182699
 Halo:
@@ -12383,6 +12386,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &567363563
 Halo:
@@ -13872,6 +13876,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &642996242
 Halo:
@@ -16576,6 +16581,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &741407504
 Halo:
@@ -18231,6 +18237,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &832010873
 Halo:
@@ -21556,6 +21563,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1004373058
 Halo:
@@ -21828,6 +21836,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1016078778
 Halo:
@@ -22384,6 +22393,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1040410401
 Halo:
@@ -23146,6 +23156,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1119746704
 Halo:
@@ -24659,6 +24670,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!1 &1194596925
 GameObject:
@@ -28565,6 +28577,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1456642272
 Halo:
@@ -28904,6 +28917,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1464591284
 Halo:
@@ -29014,6 +29028,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1471011716
 Halo:
@@ -29363,6 +29378,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1496561350
 Halo:
@@ -29473,6 +29489,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1503252617
 Halo:
@@ -30634,6 +30651,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1546293189
 Halo:
@@ -31531,6 +31549,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1587258101
 Halo:
@@ -31752,6 +31771,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1601425616
 Halo:
@@ -31933,6 +31953,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1610966222
 Halo:
@@ -32707,6 +32728,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1645423756
 Halo:
@@ -33219,6 +33241,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1665544798
 Halo:
@@ -37364,6 +37387,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1868741495
 Halo:
@@ -37740,6 +37764,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1881059717
 Halo:
@@ -38204,6 +38229,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 3
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &1892265822
 Halo:
@@ -42412,6 +42438,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &2110007801
 Halo:
@@ -42694,6 +42721,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 0
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &2124701797
 Halo:
@@ -42844,6 +42872,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 2
   team: Blue
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &2128376204
 Halo:
@@ -43427,6 +43456,7 @@ MonoBehaviour:
   maxPatrolDistance: 7
   level: 1
   team: Red
+  respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!122 &2146657782
 Halo:
