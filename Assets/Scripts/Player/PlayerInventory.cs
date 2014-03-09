@@ -10,7 +10,7 @@ public class PlayerInventory : MonoBehaviour {
 
 
 	private bool isCollecting = false;
-	private float ressourceDelay = 4.0f;
+	public float ressourceDelay = 4.0f;
 	private float collectingStartTime;
 	private float collectingTime;
 
@@ -49,9 +49,7 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(KeyCode.E))
 			{
-				print (GetComponent<PlayerCombat>().hp);
 				RestoreHealthPoints();
-				print (GetComponent<PlayerCombat>().hp);
 				giveInventoryToMerchant(merchant);
 			}
 		}
@@ -186,7 +184,7 @@ public class PlayerInventory : MonoBehaviour {
 	private void giveInventoryToMerchant(GameObject merchant){
 		ItemType itemType = ItemBuilder.Pick(inventaire);
 		if (itemType != null) {
-			GetComponent<PlayerEquipement>().GiveItem (itemType);
+			GetComponent<PlayerEquipment>().GiveItem(itemType);
 			InitializeInventory();
 		}
 	}
