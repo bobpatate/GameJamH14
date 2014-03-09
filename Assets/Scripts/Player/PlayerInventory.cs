@@ -51,7 +51,9 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			if (Input.GetKeyDown(KeyCode.E))
 			{
-				print ("Marchand fag");
+				print (GetComponent<PlayerCombat>().hp);
+				RestoreHealthPoints();
+				print (GetComponent<PlayerCombat>().hp);
 				giveInventoryToMerchant(merchant);
 			}
 		}
@@ -185,5 +187,9 @@ public class PlayerInventory : MonoBehaviour {
 
 	private void giveInventoryToMerchant(GameObject merchant){
 		itemType = ItemBuilder.Pick(inventaire);
+	}
+
+	private void RestoreHealthPoints(){
+		GetComponent<PlayerCombat>().hp = GetComponent<PlayerCombat>().maxhp;
 	}
 }
