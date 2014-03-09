@@ -42,8 +42,10 @@ public class PlayerCombat : MonoBehaviour {
 
 	//Actions
 	void Attacks(){
-		if(enemy.ReceivesDamage(strength))
+		if(enemy.ReceivesDamage(strength)){
 			playerControllerScript.enabled = true;
+			isInBattle = false;
+		}
 	}
 
 	public void ReceivesDamage( float damage ){
