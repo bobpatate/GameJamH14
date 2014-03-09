@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 20
   rigidity: .100000001
   target: {fileID: 1756744702}
 --- !u!124 &1373010966
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 20
   rigidity: .100000001
   target: {fileID: 1599045127}
 --- !u!124 &1926596102
