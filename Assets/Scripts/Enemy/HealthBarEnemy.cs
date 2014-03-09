@@ -15,7 +15,7 @@ public class HealthBarEnemy : MonoBehaviour {
 		myhb = (GameObject)Instantiate(myHealthbar, transform.position, transform.rotation);
 
 		//Visible for who
-		if(gameObject.GetComponent<Enemy>().getTeam() == "Red"){
+		if(gameObject.GetComponent<Enemy>().getTeam() == "Blue"){
 			myhb.layer = LayerMask.NameToLayer("Player2Only");
 		}
 		else{
@@ -26,7 +26,7 @@ public class HealthBarEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update (){
 		Vector3 pos = Vector3.zero;
-		if(gameObject.GetComponent<Enemy>().getTeam() == "Red"){
+		if(gameObject.GetComponent<Enemy>().getTeam() == "Blue"){
 			pos = GameObject.Find("Camera 2").camera.WorldToViewportPoint(transform.position);
 		}
 		else{
