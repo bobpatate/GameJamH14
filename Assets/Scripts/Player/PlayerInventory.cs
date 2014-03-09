@@ -32,7 +32,7 @@ public class PlayerInventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isInCollectingRange)
+		if (isInCollectingRange && collectible.GetComponent<RessourceStats>().harvested == false)
 		{
 			if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonUp("joystick 1 button 0")) && !isCollecting && playerNumber==1)
 			{
