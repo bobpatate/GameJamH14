@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour {
 	private int force = 1000;
 	private Vector3 posInit;
 
+	public GameObject damageText;
+
 	// Use this for initialization
 	void Start () {
 		healthBar = gameObject.GetComponent<HealthBarEnemy>();
@@ -140,6 +142,11 @@ public class Enemy : MonoBehaviour {
 		hp -= damage-endurance;
 		playerPlayed = true;
 		healthBar.hp = hp;
+		GameObject text = (GameObject)Instantiate (damageText);
+		text.transform.position = transform.position;
+		text.GetComponent<DamageTextController> ().Amount = (int)(damage - endurance);
+
+
 		print ("Enemy hp left "  + hp);
 		nextAttack = Time.time + 1.5f;
 
