@@ -53,6 +53,7 @@ public class PlayerCombat : MonoBehaviour {
 
 		if(hp <= 0){
 			print ("You dead");
+			enemy.PlayerIsDead();
 			Respawn();
 		}
 	}

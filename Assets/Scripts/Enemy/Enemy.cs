@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
 	float endurance;
 	float speed;
 	float hp;
+	float maxhp;
 
 	bool isInBattle = false;
 	PlayerCombat player;
@@ -38,33 +39,38 @@ public class Enemy : MonoBehaviour {
 			endurance = 0.5f;
 			speed = 1.0f;
 			hp = 20.0f;
+			maxhp = 20.0f;
 		}
 		else if(level == EnemyLevel.Intermediate){
 			strength = 5.0f;
 			endurance = 2.0f;
 			speed = 1.4f;
 			hp = 35.0f;
+			maxhp = 35.0f;
 		}
 		else if(level == EnemyLevel.Strong){
 			strength = 8.0f;
 			endurance = 3.0f;
 			speed = 1.8f;
 			hp = 50.0f;
+			maxhp = 50.0f;
 		}
 		else if(level == EnemyLevel.SuperStrong){
 			strength = 13.0f;
 			endurance = 6.0f;
 			speed = 2.0f;
 			hp = 80.0f;
+			maxhp = 80.0f;
 		}
 		else if(level == EnemyLevel.Boss){
 			strength = 19.0f;
 			endurance = 11.0f;
 			speed = 2.3f;
 			hp = 130.0f;
+			maxhp = 130.0f;
 		}
 
-		healthBar.maxhp = hp;
+		healthBar.maxhp = maxhp;
 		healthBar.hp = hp;
 
 		/*if(team == "Red")
@@ -140,6 +146,11 @@ public class Enemy : MonoBehaviour {
 	void Die(){
 		healthBar.destroyToi();
 		Destroy (this.gameObject);
+	}
+
+	public void PlayerIsDead(){
+		hp = maxhp;
+		healthBar.hp = maxhp;
 	}
 
 	public void PlayerSeen(GameObject player){
