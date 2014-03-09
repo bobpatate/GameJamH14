@@ -26,6 +26,8 @@ public class RessourceStats : MonoBehaviour {
 		harvested = true;
 		harvestedAtTime = Time.time;
 
-		//transform.FindChild("Collectile_Trigger").GetComponent<SphereCollider>.enabled = false;
+		//transform.FindChild("Collectile_Trigger").gameObject.GetComponent<SphereCollider>().enabled = false;
+		//transform.FindChild("Collectile_Trigger").gameObject.GetComponent<MeshRenderer>().enabled = false;
+		//transform.FindChild("SM_Clothes").GetComponent<MeshRenderer>().enabled = false;
 	}
 }
