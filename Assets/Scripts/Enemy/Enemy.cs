@@ -173,8 +173,13 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Die(){
-		healthBar.destroyToi();
-		Destroy (this.gameObject);
+		//healthBar.destroyToi();
+		//Destroy (this.gameObject);
+		CombatEnded ();
+		hp = maxhp;
+		healthBar.hp = maxhp;
+		transform.position = new Vector3 (0, 0, 300);
+
 	}
 
 	public void PlayerIsDead(){
