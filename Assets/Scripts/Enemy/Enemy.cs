@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour {
 
 				playerPos = playerGO.transform;
 				targetDirection = (playerPos.position - myTransform.position);
-				//transform.LookAt(playerPos.position);
+				transform.LookAt(playerPos.position);
 
 				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour {
 		else
 		{
 			targetDirection = (posInit - myTransform.position);
-			//transform.LookAt(posInit);
+			transform.LookAt(posInit);
 			
 			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 			targetDirection.Normalize();

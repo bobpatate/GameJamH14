@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90537923da0e334eaea21a827c99e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelChild: player_bird
   _maxVelocityChange: 5
   _speed: 5
   horizontal: Horizontal2
@@ -1133,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7bb1c596fb90474f9ccc266ee5b16d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourceDelay: 4
+  collectingSpeed: 1
   playerNumber: 2
 --- !u!137 &13700000
 SkinnedMeshRenderer:
