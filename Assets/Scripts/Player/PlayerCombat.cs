@@ -88,8 +88,8 @@ public class PlayerCombat : MonoBehaviour {
 			}
 		}
 
-		else if(other.gameObject.name == "Detection_Trigger" && !isInBattle){
-			other.gameObject.transform.parent.GetComponent<Enemy>().PlayerSeen(gameObject.transform.parent.gameObject);
+		else if(other.gameObject.name == "Detection_Trigger"){
+			other.transform.parent.gameObject.GetComponent<Enemy>().PlayerSeen(gameObject);
 		}
 	}
 

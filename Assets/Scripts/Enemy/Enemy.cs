@@ -35,6 +35,8 @@ public class Enemy : MonoBehaviour {
 	void Start () {
 		healthBar = gameObject.GetComponent<HealthBarEnemy>();
 
+		myTransform = transform;
+
 		//levelstats
 		if(level == EnemyLevel.Weak){
 			strength = 3.0f;
@@ -90,22 +92,17 @@ public class Enemy : MonoBehaviour {
 		}
 
 		else if(!isInBattle && playerSeen){
-			print ("ASSSSSSSSSSSSSSSSSSSS");
 			if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
 			{
 				playerPos = playerGO.transform;
-				if (playerPos.position.z < 0)
-				{
-					targetDirection = (playerPos.position - myTransform.position)+ Offset;
+				if (playerPos.position.z < 0){print("sup");
+					targetDirection = (playerPos.position - myTransform.position) + Offset;
 				}
-				else
-				{
-					targetDirection = (playerPos.position - myTransform.position)- Offset;
+				else{print("sup2");
+					targetDirection = (playerPos.position - myTransform.position) - Offset;
 				}
-				
-				
-				
-				targetDirection= new Vector3(targetDirection.x, 0, targetDirection.z);
+
+				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
 				rigidbody.AddForce(targetDirection * force * Time.deltaTime);
 			}
@@ -126,7 +123,6 @@ public class Enemy : MonoBehaviour {
 		nextAttack = Time.time + 1.5f;
 
 		if(hp <= 0){
-			print ("Enemy dead");
 			Die();
 			return true;
 		}
