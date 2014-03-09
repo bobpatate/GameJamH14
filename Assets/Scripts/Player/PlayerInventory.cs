@@ -16,7 +16,7 @@ public class PlayerInventory : MonoBehaviour {
 						animator.SetBool ("gathering", value);
 					}
 				}
-			public float ressourceDelay = 4.0f;
+	public float collectingSpeed = 1.0f;
 	private float collectingStartTime;
 	private float collectingTime;
 
@@ -49,7 +49,7 @@ public class PlayerInventory : MonoBehaviour {
 				playerControllerScript.enabled = false;
 
 				collectingStartTime = Time.time;
-				collectingTime = Time.time + ressourceDelay;
+				collectingTime = Time.time + collectible.GetComponent<RessourceStats>().collectingTime / collectingSpeed;
 				collectibleName = collectible.name;
 			}
 			else if ((Input.GetKeyDown(KeyCode.RightControl)|| Input.GetButtonUp("joystick 2 button 0")) && !isCollecting && playerNumber==2)
@@ -60,7 +60,7 @@ public class PlayerInventory : MonoBehaviour {
 				playerControllerScript.enabled = false;
 				
 				collectingStartTime = Time.time;
-				collectingTime = Time.time + ressourceDelay;
+				collectingTime = Time.time + collectible.GetComponent<RessourceStats>().collectingTime / collectingSpeed;
 				collectibleName = collectible.name;
 			}
 
@@ -142,12 +142,12 @@ public class PlayerInventory : MonoBehaviour {
 		InitStyles();
 		if ( showCollectTimeBar )
 		{
-			if ( GetComponent<PlayerCombat>().team == "Red" )
+			if ( GetComponent<PlayerCombat>().team == "Blue" )
 			{
 				GUI.BeginGroup(new Rect(Screen.width/6 , Screen.height*0.8f, collectTimeBarLenght + 10, 25));
 				GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 25),"Harvesting");
 				
-				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 20));
+				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/(collectingTime - collectingStartTime)), 20));
 				GUI.Box(new Rect(4,4, collectTimeBarLenght, 20),"", currentStyle);
 				GUI.EndGroup();
 				GUI.EndGroup();
@@ -157,7 +157,7 @@ public class PlayerInventory : MonoBehaviour {
 				GUI.BeginGroup(new Rect(Screen.width - (Screen.width / 3) , Screen.height*0.8f, collectTimeBarLenght + 10, 25));
 				GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 25),"Harvesting");
 				
-				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 20));
+				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/(collectingTime - collectingStartTime)), 20));
 				GUI.Box(new Rect(4,4, collectTimeBarLenght, 20),"", currentStyle);
 				GUI.EndGroup();
 				GUI.EndGroup();

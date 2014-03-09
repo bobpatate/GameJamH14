@@ -35,7 +35,7 @@ public class PlayerEquipment : MonoBehaviour {
 		}
 
         PlayerInventory playerInventory = GetComponent<PlayerInventory>();
-        playerInventory.ressourceDelay = 4.0f / stats.GatheringSpeed;
+		playerInventory.collectingSpeed = stats.GatheringSpeed;
 
         PlayerController playerController = GetComponent<PlayerController>();
         playerController._speed = playerController._maxVelocityChange = 5.0f * stats.MovementSpeed;
