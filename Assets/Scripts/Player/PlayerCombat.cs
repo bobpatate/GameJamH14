@@ -44,6 +44,9 @@ public class PlayerCombat : MonoBehaviour {
 
 	//Actions
 	void Attacks(){
+		PlayerEquipment playerEquipment = GetComponent<PlayerEquipment> ();
+		playerEquipment.UseWeapon(1);
+
 		if(enemy.ReceivesDamage(strength)){
 			playerControllerScript.enabled = true;
 			isInBattle = false;
@@ -57,6 +60,9 @@ public class PlayerCombat : MonoBehaviour {
 		GameObject text = (GameObject)Instantiate (damageText);
 		text.transform.position = transform.position;
 		text.GetComponent<DamageTextController> ().Amount = (int)(damage - endurance);
+
+		PlayerEquipment playerEquipment = GetComponent<PlayerEquipment> ();
+		playerEquipment.UseArmor (1);
 
 		if(hp <= 0){
 			print ("You dead");
