@@ -14,19 +14,22 @@ public class Enemy : MonoBehaviour {
 	float endurance;
 	float speed;
 	float hp;
+	float maxhp;
 
 	bool isInBattle = false;
 	PlayerCombat player;
 	bool playerPlayed = true;
 	float nextAttack;
-
-	bool playerInRange = false;
+	
 	bool playerSeen = false;
 	GameObject playerGO;
+
 	private Transform playerPos;
 	private Vector3 targetDirection;
 	private float maxVelocity = 5.0f;
 	private Transform myTransform;
+	private int force = 1000;
+	private Vector3 Offset;
 
 	// Use this for initialization
 	void Start () {
@@ -38,33 +41,38 @@ public class Enemy : MonoBehaviour {
 			endurance = 0.5f;
 			speed = 1.0f;
 			hp = 20.0f;
+			maxhp = 20.0f;
 		}
 		else if(level == EnemyLevel.Intermediate){
 			strength = 5.0f;
 			endurance = 2.0f;
 			speed = 1.4f;
 			hp = 35.0f;
+			maxhp = 35.0f;
 		}
 		else if(level == EnemyLevel.Strong){
 			strength = 8.0f;
 			endurance = 3.0f;
 			speed = 1.8f;
 			hp = 50.0f;
+			maxhp = 50.0f;
 		}
 		else if(level == EnemyLevel.SuperStrong){
 			strength = 13.0f;
 			endurance = 6.0f;
 			speed = 2.0f;
 			hp = 80.0f;
+			maxhp = 80.0f;
 		}
 		else if(level == EnemyLevel.Boss){
 			strength = 19.0f;
 			endurance = 11.0f;
 			speed = 2.3f;
 			hp = 130.0f;
+			maxhp = 130.0f;
 		}
 
-		healthBar.maxhp = hp;
+		healthBar.maxhp = maxhp;
 		healthBar.hp = hp;
 
 		/*if(team == "Red")
@@ -82,7 +90,8 @@ public class Enemy : MonoBehaviour {
 		}
 
 		else if(!isInBattle && playerSeen){
-			/*if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
+			print ("ASSSSSSSSSSSSSSSSSSSS");
+			if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
 			{
 				playerPos = playerGO.transform;
 				if (playerPos.position.z < 0)
@@ -99,7 +108,7 @@ public class Enemy : MonoBehaviour {
 				targetDirection= new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
 				rigidbody.AddForce(targetDirection * force * Time.deltaTime);
-			}*/
+			}
 		}
 	}
 
@@ -142,9 +151,14 @@ public class Enemy : MonoBehaviour {
 		Destroy (this.gameObject);
 	}
 
+	public void PlayerIsDead(){
+		hp = maxhp;
+		healthBar.hp = maxhp;
+	}
+
 	public void PlayerSeen(GameObject player){
 		playerGO = player;
-		playerInRange = true;
+		playerSeen = true;
 	}
 
 

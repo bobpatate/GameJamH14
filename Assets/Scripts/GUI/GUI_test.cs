@@ -32,13 +32,52 @@ public class GUI_test : MonoBehaviour {
 	private Texture2D[] inv = new Texture2D[10];
 	private Texture2D[] inv2 = new Texture2D[10];
 
-	public Texture2D[] equipP1 = new Texture2D[4];
-	public Texture2D[] equipP2 = new Texture2D[4];
+	private Texture2D[] equipP1 = new Texture2D[4];
+	private Texture2D[] equipP2 = new Texture2D[4];
 	
 	public GameObject Player1;
 	public GameObject Player2;
+
+	private GUIStyle currentStyle = null;
+	private GUIStyle currentStyle2 = null;
+
+	public Texture2D redBG, blueBG;
 	
+	void Start(){
+
+	}
+
+	private void InitStyles()	
+	{
+		if( currentStyle == null )	
+		{
+			currentStyle = new GUIStyle( GUI.skin.box );
+			currentStyle.normal.background = MakeTex( 2, 2, new Color( 0f, 1f, 0f, 0.5f ) );
+		}
+		if( currentStyle2 == null )	
+		{
+			currentStyle2 = new GUIStyle( GUI.skin.box );
+			currentStyle2.normal.background = MakeTex( 2, 2, new Color( 0f, 0f, 0f, 1f ) );
+		}
+	}
+	
+	private Texture2D MakeTex( int width, int height, Color col )	
+	{
+		
+		Color[] pix = new Color[width * height];
+		for( int i = 0; i < pix.Length; ++i )	
+		{
+			pix[ i ] = col;
+		}
+		Texture2D result = new Texture2D( width, height );
+		result.SetPixels( pix );
+		result.Apply();
+		return result;
+	}
+
 	void OnGUI () {
+		InitStyles();
+
 		PlayerInventory inventoryP1;
 		inventoryP1 = Player1.GetComponent<PlayerInventory>();
 		PlayerInventory inventoryP2;
@@ -96,111 +135,96 @@ public class GUI_test : MonoBehaviour {
 			}
 		}
 
-		if(equipementP1.equipInventaire[0].nom == "sword"){
-			if(equipementP1.equipInventaire[0].tier == 0){
-				equipP1[0] = iconWepT0;
-			}else if(equipementP1.equipInventaire[0].tier == 1){
+		if(equipementP1.sword == 0){
+			equipP1[0] = iconWepT0;
+		}else if(equipementP1.sword == 1){
 				equipP1[0] = iconWepT1;
-			}else if(equipementP1.equipInventaire[0].tier == 2){
-				equipP1[0] = iconWepT2;
-			}else if(equipementP1.equipInventaire[0].tier == 3){
-				equipP1[0] = iconWepT3;
-			}
+		}else if(equipementP1.sword == 2){
+			equipP1[0] = iconWepT2;
+		}else if(equipementP1.sword == 3){
+			equipP1[0] = iconWepT3;
 		}
 
-		if(equipementP1.equipInventaire[1].nom == "armor"){
-			if(equipementP1.equipInventaire[1].tier == 0){
-				equipP1[1] = iconArmorT0;
-			}else if(equipementP1.equipInventaire[0].tier == 1){
-				equipP1[1] = iconArmorT1;
-			}else if(equipementP1.equipInventaire[0].tier == 2){
-				equipP1[1] = iconArmorT2;
-			}else if(equipementP1.equipInventaire[0].tier == 3){
-				equipP1[1] = iconArmorT3;
-			}
+		if(equipementP1.armor == 0){
+			equipP1[1] = iconArmorT0;
+		}else if(equipementP1.armor == 1){
+			equipP1[1] = iconArmorT1;
+		}else if(equipementP1.armor == 2){
+			equipP1[1] = iconArmorT2;
+		}else if(equipementP1.armor == 3){
+			equipP1[1] = iconArmorT3;
 		}
 
-		if(equipementP1.equipInventaire[2].nom == "boots"){
-			if(equipementP1.equipInventaire[2].tier == 0){
-				equipP1[2] = iconBootsT0;
-			}else if(equipementP1.equipInventaire[0].tier == 1){
-				equipP1[2] = iconBootsT1;
-			}else if(equipementP1.equipInventaire[0].tier == 2){
-				equipP1[2] = iconBootsT2;
-			}else if(equipementP1.equipInventaire[0].tier == 3){
-				equipP1[2] = iconBootsT3;
-			}
+		if(equipementP1.boots == 0){
+			equipP1[2] = iconBootsT0;
+		}else if(equipementP1.boots == 1){
+			equipP1[2] = iconBootsT1;
+		}else if(equipementP1.boots == 2){
+			equipP1[2] = iconBootsT2;
+		}else if(equipementP1.boots == 3){
+			equipP1[2] = iconBootsT3;
 		}
 
-		if(equipementP1.equipInventaire[3].nom == "gathering"){
-			if(equipementP1.equipInventaire[3].tier == 0){
-				equipP1[3] = iconGatT0;
-			}else if(equipementP1.equipInventaire[0].tier == 1){
-				equipP1[3] = iconGatT1;
-			}else if(equipementP1.equipInventaire[0].tier == 2){
-				equipP1[3] = iconGatT2;
-			}else if(equipementP1.equipInventaire[0].tier == 3){
-				equipP1[3] = iconGatT3;
-			}
+		if(equipementP1.gathering == 0){
+			equipP1[3] = iconGatT0;
+		}else if(equipementP1.gathering == 1){
+			equipP1[3] = iconGatT1;
+		}else if(equipementP1.gathering == 2){
+			equipP1[3] = iconGatT2;
+		}else if(equipementP1.gathering == 3){
+			equipP1[3] = iconGatT3;
 		}
 
 		/////////
 		/// Player 2
 		/////////
 
-		if(equipementP2.equipInventaire[0].nom == "sword"){
-			if(equipementP2.equipInventaire[0].tier == 0){
-				equipP2[0] = iconWepT0;
-			}else if(equipementP2.equipInventaire[0].tier == 1){
-				equipP2[0] = iconWepT1;
-			}else if(equipementP2.equipInventaire[0].tier == 2){
-				equipP2[0] = iconWepT2;
-			}else if(equipementP2.equipInventaire[0].tier == 3){
-				equipP2[0] = iconWepT3;
-			}
-		}
-		
-		if(equipementP2.equipInventaire[1].nom == "armor"){
-			if(equipementP2.equipInventaire[1].tier == 0){
-				equipP2[1] = iconArmorT0;
-			}else if(equipementP2.equipInventaire[0].tier == 1){
-				equipP2[1] = iconArmorT1;
-			}else if(equipementP2.equipInventaire[0].tier == 2){
-				equipP2[1] = iconArmorT2;
-			}else if(equipementP2.equipInventaire[0].tier == 3){
-				equipP2[1] = iconArmorT3;
-			}
-		}
-		
-		if(equipementP2.equipInventaire[2].nom == "boots"){
-			if(equipementP2.equipInventaire[2].tier == 0){
-				equipP2[2] = iconBootsT0;
-			}else if(equipementP2.equipInventaire[0].tier == 1){
-				equipP2[2] = iconBootsT1;
-			}else if(equipementP2.equipInventaire[0].tier == 2){
-				equipP2[2] = iconBootsT2;
-			}else if(equipementP2.equipInventaire[0].tier == 3){
-				equipP2[2] = iconBootsT3;
-			}
-		}
-		
-		if(equipementP2.equipInventaire[3].nom == "gathering"){
-			if(equipementP2.equipInventaire[3].tier == 0){
-				equipP2[3] = iconGatT0;
-			}else if(equipementP2.equipInventaire[0].tier == 1){
-				equipP2[3] = iconGatT1;
-			}else if(equipementP2.equipInventaire[0].tier == 2){
-				equipP2[3] = iconGatT2;
-			}else if(equipementP2.equipInventaire[0].tier == 3){
-				equipP2[3] = iconGatT3;
-			}
+		if(equipementP2.sword == 0){
+			equipP2[0] = iconWepT0;
+		}else if(equipementP2.sword == 1){
+			equipP2[0] = iconWepT1;
+		}else if(equipementP2.sword == 2){
+			equipP2[0] = iconWepT2;
+		}else if(equipementP2.sword == 3){
+			equipP2[0] = iconWepT3;
 		}
 
-		GUI.Box (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,Screen.height*150/910), "");
+		if(equipementP2.armor == 0){
+			equipP2[1] = iconArmorT0;
+		}else if(equipementP2.armor == 1){
+			equipP2[1] = iconArmorT1;
+		}else if(equipementP2.armor == 2){
+			equipP2[1] = iconArmorT2;
+		}else if(equipementP2.armor == 3){
+			equipP2[1] = iconArmorT3;
+		}
+
+		if(equipementP2.boots == 0){
+			equipP2[2] = iconBootsT0;
+		}else if(equipementP2.boots == 1){
+			equipP2[2] = iconBootsT1;
+		}else if(equipementP2.boots == 2){
+			equipP2[2] = iconBootsT2;
+		}else if(equipementP2.boots == 3){
+			equipP2[2] = iconBootsT3;
+		}
+
+		if(equipementP2.gathering == 0){
+			equipP2[3] = iconGatT0;
+		}else if(equipementP2.gathering == 1){
+			equipP2[3] = iconGatT1;
+		}else if(equipementP2.gathering == 2){
+			equipP2[3] = iconGatT2;
+		}else if(equipementP2.gathering == 3){
+			equipP2[3] = iconGatT3;
+		}
+
+		GUI.DrawTexture (new Rect (0 ,Screen.height - Screen.height*150/910,Screen.width / 2,Screen.height*150/910), redBG);
 		GUI.Box (new Rect (0 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
 		////
 		/// Healtbar
-		GUI.Box (new Rect (Screen.width*5/1617, Screen.height  - Screen.height*174/910, Screen.width*240/1617, Screen.height*18/910), "");
+		GUI.Box (new Rect (Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);
+		GUI.Box (new Rect (Screen.width*6/1617, Screen.height - Screen.height*173/910, Screen.width*238/1617, Screen.height*18/910), "", currentStyle);
 		/// 
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), inv[4]);
 		GUI.Box (new Rect ((Screen.width / 2)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), inv[9]);
@@ -225,8 +249,12 @@ public class GUI_test : MonoBehaviour {
 		////
 		/// 
 		/// 
-		GUI.Box (new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), "");
+		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), blueBG);
 		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,Screen.width*250/1617,Screen.height*30/910), "");
+		////
+		/// /// Healtbar
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*5/1617, Screen.height - Screen.height*174/910, Screen.width*240/1617, Screen.height*20/910), "", currentStyle2);
+		GUI.Box (new Rect (Screen.width / 2 + Screen.width*6/1617, Screen.height - Screen.height*173/910, Screen.width*238/1617, Screen.height*18/910), "", currentStyle);
 		////
 		GUI.Box (new Rect ((Screen.width)-Screen.width*70/1617 ,Screen.height - Screen.height*130/910,Screen.width*50/1617,Screen.height*50/910), inv2[5]);
 		GUI.Box (new Rect ((Screen.width)-Screen.width*70/1617 ,Screen.height - Screen.height*70/910,Screen.width*50/1617,Screen.height*50/910), inv2[9]);
