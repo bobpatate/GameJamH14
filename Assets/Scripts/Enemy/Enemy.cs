@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour {
 		healthBar.hp = hp;
 		GameObject text = (GameObject)Instantiate (damageText);
 		text.transform.position = transform.position;
-		text.GetComponent<DamageTextController> ().Amount = (int)(damage - endurance);
+		text.GetComponent<DamageTextController>().Amount = (int)(damage - endurance);
 
 
 		print ("Enemy hp left "  + hp);

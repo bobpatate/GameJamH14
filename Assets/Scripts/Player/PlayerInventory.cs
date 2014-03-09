@@ -8,7 +8,6 @@ public class PlayerInventory : MonoBehaviour {
 	private bool showCollectTimeBar = false;
 	private GameObject collectible;
 
-
 	private bool isCollecting = false;
 	public float ressourceDelay = 4.0f;
 	private float collectingStartTime;
@@ -16,11 +15,13 @@ public class PlayerInventory : MonoBehaviour {
 
 	private float collectTimeBarLenght = 100;
 	private GUIStyle currentStyle = null;
-	public PlayerController playerControllerScript;
+	private PlayerController playerControllerScript;
 
 	private bool isInCraftingRange = false;
 	private GameObject merchant;
 	private string collectibleName;
+
+	public int playerNumber;
 
 	private int nbRessources = 0;
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class PlayerInventory : MonoBehaviour {
 	void Update () {
 		if (isInCollectingRange)
 		{
-			if (Input.GetKeyDown(KeyCode.E) && !isCollecting)
+			if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonUp("joystick 1 button 0")) && !isCollecting && playerNumber==1)
 			{
 				isCollecting = true;
 				showCollectTimeBar = true;
@@ -44,18 +45,37 @@ public class PlayerInventory : MonoBehaviour {
 				collectingTime = Time.time + ressourceDelay;
 				collectibleName = collectible.name;
 			}
+			else if ((Input.GetKeyDown(KeyCode.RightControl)|| Input.GetButtonUp("joystick 2 button 0")) && !isCollecting && playerNumber==2)
+			{
+				isCollecting = true;
+				showCollectTimeBar = true;
+				rigidbody.velocity = new Vector3(0,0,0);
+				playerControllerScript.enabled = false;
+				
+				collectingStartTime = Time.time;
+				collectingTime = Time.time + ressourceDelay;
+				collectibleName = collectible.name;
+			}
 
 			if(isCollecting && Time.time > collectingTime)
 				doneCollecting();
 		}
+
 		if (isInCraftingRange)
 		{
-			if (Input.GetKeyDown(KeyCode.E))
+			if ((Input.GetKeyDown(KeyCode.E)|| Input.GetButtonUp("joystick 1 button 0")) && playerNumber==1)
 			{
 				RestoreHealthPoints();
 				if ( nbRessources >= 4 )
 					giveInventoryToMerchant(merchant);
 
+			}
+			else if ((Input.GetKeyDown(KeyCode.RightControl) || Input.GetButtonUp("joystick 2 button 0")) && playerNumber==2)
+			{
+				RestoreHealthPoints();
+				if ( nbRessources >= 4 )
+					giveInventoryToMerchant(merchant);
+				
 			}
 		}
 	}
@@ -70,7 +90,7 @@ public class PlayerInventory : MonoBehaviour {
 		if ( CheckRessourceExisting(collectibleName))
 		{
 			AddToInventory(collectible);
-			Destroy(collectible);
+			collectible.GetComponent<RessourceStats>().Harvested();
 			collectible = null;
 
 			PlayerEquipment playerEquipment = GetComponent<PlayerEquipment> ();
