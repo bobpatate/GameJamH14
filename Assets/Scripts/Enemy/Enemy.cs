@@ -29,11 +29,14 @@ public class Enemy : MonoBehaviour {
 	private Transform myTransform;
 	private int force = 1000;
 
+	Vector3 posInit;
+
 	// Use this for initialization
 	void Start () {
 		healthBar = gameObject.GetComponent<HealthBarEnemy>();
 
 		myTransform = transform;
+		posInit = transform.position;
 
 		//levelstats
 		if(level == EnemyLevel.Weak){
