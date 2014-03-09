@@ -27582,10 +27582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 12
+  distance: 17
   rigidity: .100000001
   angle: 50
-  offset: 12
+  offset: 17
   target: {fileID: 265955526}
 --- !u!124 &1373010966
 Behaviour:
@@ -43884,10 +43884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5abc14d6223e740bfb707c99baaecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 12
+  distance: 17
   rigidity: .100000001
   angle: 50
-  offset: 12
+  offset: 17
   target: {fileID: 1889867232}
 --- !u!124 &2139143963
 Behaviour:
