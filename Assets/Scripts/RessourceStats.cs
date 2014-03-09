@@ -16,7 +16,13 @@ public class RessourceStats : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shaderHarvested = Shader.Find("Shader Forge/shader_disabled");
-		shader = Shader.Find("Shader Forge/shader_corrosif");
+		if(name == "Textile")
+			shader = gameObject.transform.FindChild("SM_clothes").renderer.material.shader;
+		else if(name == "Metal")
+			shader = gameObject.transform.FindChild("SM_metal").renderer.material.shader;
+		else if(name == "Electronique")
+			shader = gameObject.transform.FindChild("SM_tv").renderer.material.shader;
+		//shader = Shader.Find("Shader Forge/shader_corrosif");
 	}
 	
 	// Update is called once per frame

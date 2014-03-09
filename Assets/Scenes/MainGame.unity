@@ -6065,6 +6065,7 @@ MonoBehaviour:
   modelChild: player_mouse
   _maxVelocityChange: 5
   _speed: 5
+  initialPos: {x: 0, y: 0, z: 0}
   horizontal: Horizontal1
   vertical: Vertical1
 --- !u!54 &265955533
@@ -18327,7 +18328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPatrolDistance: 7
-  level: 0
+  level: 4
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
@@ -18946,7 +18947,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: level
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: ecbcf99bda8a2d64ab612a9ec1caea93, type: 2}
       propertyPath: team
@@ -38288,6 +38289,7 @@ MonoBehaviour:
   modelChild: player_bird
   _maxVelocityChange: 5
   _speed: 5
+  initialPos: {x: 0, y: 0, z: 0}
   horizontal: Horizontal2
   vertical: Vertical2
 --- !u!54 &1889867239

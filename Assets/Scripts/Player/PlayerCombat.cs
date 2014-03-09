@@ -84,6 +84,8 @@ public class PlayerCombat : MonoBehaviour {
 
 			print ("You dead");
 			tempsRespawn = 5f;
+			Animator animator = GetComponentInChildren<Animator>();
+			animator.SetBool("dying", true);
 		}
 	}
 
@@ -99,7 +101,9 @@ public class PlayerCombat : MonoBehaviour {
 		playerControllerScript.enabled = true;
 		hp = maxhp;
 
-		gameObject.transform.position = GameObject.Find("Merchant").transform.position + Vector3.forward*2;
+		gameObject.transform.position=GetComponent<PlayerController>().initialPos;
+		Animator animator = GetComponentInChildren<Animator>();
+		animator.SetBool("dying", false);
 	}
 
 

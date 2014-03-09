@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour {
 	
 	public float _maxVelocityChange = 5.0f;
 	public float _speed = 5.0f;
-
+	public Vector3 initialPos;
 	public string horizontal, vertical;
 
 	// Use this for initialization
 	void Start () {
-	
+		initialPos = transform.position;
 	}
 	
 	// Update is called once per frame
