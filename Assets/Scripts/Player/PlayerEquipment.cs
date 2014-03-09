@@ -9,7 +9,10 @@ public class PlayerEquipment : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		sword = armor = boots = gathering = 2;
+		sword = 1;
+		armor = 1;
+		boots = 1;
+		gathering = 1;
 	}
 	
 	// Update is called once per frame

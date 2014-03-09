@@ -28,21 +28,19 @@ public class GUI_test : MonoBehaviour {
 	public Texture2D iconElectronicT1;
 	public Texture2D iconElectronicT2;
 	public Texture2D iconElectronicT3;
+	public GameObject Player1;
+	public GameObject Player2;
+	public Texture2D redBG, blueBG;
 
 	private Texture2D[] inv = new Texture2D[10];
 	private Texture2D[] inv2 = new Texture2D[10];
 
 	private Texture2D[] equipP1 = new Texture2D[4];
 	private Texture2D[] equipP2 = new Texture2D[4];
-	
-	public GameObject Player1;
-	public GameObject Player2;
 
 	private GUIStyle currentStyle = null;
 	private GUIStyle currentStyle2 = null;
 
-	public Texture2D redBG, blueBG;
-	
 	void Start(){
 
 	}
