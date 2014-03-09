@@ -251,6 +251,9 @@ public class GUI_test : MonoBehaviour {
 		////
 		/// 
 		/// 
+		/// 
+		/// 
+		/// 
 		GUI.DrawTexture(new Rect (Screen.width / 2 + 1,Screen.height - Screen.height*150/910,Screen.width / 2 -1,Screen.height*150/910), blueBG);
 		GUI.Box (new Rect (Screen.width / 2 + 1 ,Screen.height - Screen.height*180/910,(int)(Screen.width*250/1617*pct2),Screen.height*30/910), "");
 		////
@@ -278,5 +281,14 @@ public class GUI_test : MonoBehaviour {
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*140/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[1]);
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*260/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[2]);
 		GUI.Box (new Rect (Screen.width / 2 + Screen.width*380/1617 ,Screen.height - Screen.height*130/910,Screen.width*110/1617,Screen.height*110/910), equipP2[3]);
+	
+	
+		//Ligne du millieu
+		Texture2D lineTex= new Texture2D(1, 1);
+		Color tempColor = GUI.color;
+		GUI.color = Color.black;
+		GUI.DrawTexture(new Rect(Screen.width / 2, 0, 1, Screen.height), lineTex);
+		GUI.color = tempColor;
+	
 	}
 }
