@@ -20,7 +20,7 @@ public class PlayerInventory : MonoBehaviour {
 
 	private bool isInCraftingRange = false;
 	private GameObject merchant;
-
+	private string collectibleName;
 	// Use this for initialization
 	void Start () {
 		InitializeInventory();
@@ -40,6 +40,7 @@ public class PlayerInventory : MonoBehaviour {
 
 				collectingStartTime = Time.time;
 				collectingTime = Time.time + ressourceDelay;
+				collectibleName = collectible.name;
 			}
 
 			if(isCollecting && Time.time > collectingTime)
@@ -62,9 +63,12 @@ public class PlayerInventory : MonoBehaviour {
 		showCollectTimeBar = false;
 		isInCollectingRange = false;
 
-		AddToInventory(collectible);
-		Destroy(collectible);
-		collectible = null;
+		if ( CheckRessourceExisting(collectibleName))
+		{
+			AddToInventory(collectible);
+			Destroy(collectible);
+			collectible = null;
+		}
 	}
 
 
@@ -104,14 +108,26 @@ public class PlayerInventory : MonoBehaviour {
 		InitStyles();
 		if ( showCollectTimeBar )
 		{
-			GUI.BeginGroup(new Rect(Screen.width/4 - collectTimeBarLenght / 2, Screen.height*0.8f, collectTimeBarLenght + 10, 15));
-			GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 15),"");
-
-			//draw the filled-in part:
-			GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 10));
-			GUI.Box(new Rect(4,4, collectTimeBarLenght, 10),"", currentStyle);
-			GUI.EndGroup();
-			GUI.EndGroup();
+			if ( GetComponent<PlayerCombat>().team == "Red" )
+			{
+				GUI.BeginGroup(new Rect(Screen.width/6 , Screen.height*0.8f, collectTimeBarLenght + 10, 25));
+				GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 25),"Harvesting");
+				
+				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 20));
+				GUI.Box(new Rect(4,4, collectTimeBarLenght, 20),"", currentStyle);
+				GUI.EndGroup();
+				GUI.EndGroup();
+			}
+			else
+			{
+				GUI.BeginGroup(new Rect(Screen.width - (Screen.width / 3) , Screen.height*0.8f, collectTimeBarLenght + 10, 25));
+				GUI.Box(new Rect(0,0, collectTimeBarLenght + 10, 25),"Harvesting");
+				
+				GUI.BeginGroup(new Rect(0,0, collectTimeBarLenght * -((collectingStartTime-Time.time)/ressourceDelay), 20));
+				GUI.Box(new Rect(4,4, collectTimeBarLenght, 20),"", currentStyle);
+				GUI.EndGroup();
+				GUI.EndGroup();
+			}
 		}
 	}
 
@@ -191,5 +207,11 @@ public class PlayerInventory : MonoBehaviour {
 
 	private void RestoreHealthPoints(){
 		GetComponent<PlayerCombat>().hp = GetComponent<PlayerCombat>().maxhp;
+	}
+	private bool CheckRessourceExisting(string collectibleName){
+		if(GameObject.Find (collectibleName) != null)
+			return true;
+		else
+			return false;
 	}
 }
