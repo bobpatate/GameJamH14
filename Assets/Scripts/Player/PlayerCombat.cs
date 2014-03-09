@@ -28,12 +28,13 @@ public class PlayerCombat : MonoBehaviour {
 
 	PlayerController playerControllerScript;
 
+	public GameObject audioSource;
 	public GameObject damageText;
 
 	// Use this for initialization
 	void Start () {
 		nextAttack = Time.time + 1.5f;
-
+		audioSource = GameObject.Find ("MusicPlayer");
 		playerControllerScript = GetComponent<PlayerController>();
 	}
 
@@ -61,6 +62,7 @@ public class PlayerCombat : MonoBehaviour {
 	void Attacks(){
 		PlayerEquipment playerEquipment = GetComponent<PlayerEquipment> ();
 		playerEquipment.UseWeapon(1);
+		audioSource.GetComponent<MusicPlayer>().playPlayerHitSound();
 
 		if(enemy.ReceivesDamage(strength)){
 			playerControllerScript.enabled = true;
@@ -81,7 +83,7 @@ public class PlayerCombat : MonoBehaviour {
 
 		if(hp <= 0){
 			hp = 0;
-
+			audioSource.GetComponent<MusicPlayer>().playPlayerDeathSound();
 			print ("You dead");
 			tempsRespawn = 5f;
 			Animator animator = GetComponentInChildren<Animator>();
@@ -100,7 +102,7 @@ public class PlayerCombat : MonoBehaviour {
 		isInBattle = false;
 		playerControllerScript.enabled = true;
 		hp = maxhp;
-
+		audioSource.GetComponent<MusicPlayer>().playPlayerRespawnSound();
 		gameObject.transform.position=GetComponent<PlayerController>().initialPos;
 		Animator animator = GetComponentInChildren<Animator>();
 		animator.SetBool("dying", false);

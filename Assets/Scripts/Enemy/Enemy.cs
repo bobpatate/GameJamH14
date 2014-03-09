@@ -35,11 +35,12 @@ public class Enemy : MonoBehaviour {
 	private Vector3 posInit;
 
 	public GameObject damageText;
+	public GameObject audioSource;
 
 	// Use this for initialization
 	void Start () {
 		healthBar = gameObject.GetComponent<HealthBarEnemy>();
-
+		audioSource = GameObject.Find ("MusicPlayer");
 		myTransform = transform;
 		posInit = transform.position;
 
@@ -145,6 +146,7 @@ public class Enemy : MonoBehaviour {
 	}
 	//Actions
 	void Attacks(){
+		audioSource.GetComponent<MusicPlayer>().playEnemyHitSound();
 		player.ReceivesDamage(strength);
 	}
 
@@ -161,6 +163,7 @@ public class Enemy : MonoBehaviour {
 		nextAttack = Time.time + 1.5f;
 
 		if(hp <= 0){
+			audioSource.GetComponent<MusicPlayer>().playEnemyDeathSound();
 			Die();
 			return true;
 		}

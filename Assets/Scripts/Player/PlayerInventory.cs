@@ -31,9 +31,11 @@ public class PlayerInventory : MonoBehaviour {
 	public int playerNumber;
 
 	private int nbRessources = 0;
+	public GameObject audioSource;
 	// Use this for initialization
 	void Start () {
 		InitializeInventory();
+		audioSource = GameObject.Find ("MusicPlayer");
 		playerControllerScript = GetComponent<PlayerController>();
 	}
 	
@@ -51,6 +53,8 @@ public class PlayerInventory : MonoBehaviour {
 				collectingStartTime = Time.time;
 				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
 				collectibleName = collectible.name;
+
+				audioSource.GetComponent<MusicPlayer>().playHarvestSound();
 			}
 			else if ((Input.GetKeyDown(KeyCode.RightControl)|| Input.GetButtonUp("joystick 2 button 0")) && !isCollecting && playerNumber==2)
 			{
@@ -62,10 +66,25 @@ public class PlayerInventory : MonoBehaviour {
 				collectingStartTime = Time.time;
 				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
 				collectibleName = collectible.name;
+
+				audioSource.GetComponent<MusicPlayer>().playHarvestSound();
 			}
 
 			if(isCollecting && Time.time > collectingTime)
 				doneCollecting();
+		}
+		else if(isInCollectingRange && collectible.GetComponent<RessourceStats>().harvested == true)
+		{
+			if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonUp("joystick 1 button 0")) && !isCollecting && playerNumber==1)
+			{
+				
+				audioSource.GetComponent<MusicPlayer>().playBuzzerSound();
+			}
+			else if ((Input.GetKeyDown(KeyCode.RightControl)|| Input.GetButtonUp("joystick 2 button 0")) && !isCollecting && playerNumber==2)
+			{
+				audioSource.GetComponent<MusicPlayer>().playBuzzerSound();
+			}
+			
 		}
 
 		if (isInCraftingRange)
