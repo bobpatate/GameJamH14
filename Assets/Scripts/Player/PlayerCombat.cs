@@ -4,11 +4,11 @@ using System.Collections;
 public class PlayerCombat : MonoBehaviour {
 
 	//Stats
-	float strength = 5.0f;
-	float endurance = 1.0f;
-	float speed = 1.0f;
-	float maxhp = 15.0f;
-	float hp = 15.0f;
+	public float strength = 5.0f;
+	public float endurance = 1.0f;
+	public float speed = 1.0f;
+	public float maxhp = 15.0f;
+	public float hp = 15.0f;
 
 	public string team;
 
@@ -88,7 +88,7 @@ public class PlayerCombat : MonoBehaviour {
 			}
 		}
 
-		if(other.gameObject.name == "Fight_Trigger" && !isInBattle){
+		else if(other.gameObject.name == "Detection_Trigger" && !isInBattle){
 			other.gameObject.transform.parent.GetComponent<Enemy>().PlayerSeen(gameObject.transform.parent.gameObject);
 		}
 	}

@@ -20,14 +20,16 @@ public class Enemy : MonoBehaviour {
 	PlayerCombat player;
 	bool playerPlayed = true;
 	float nextAttack;
-
-	bool playerInRange = false;
+	
 	bool playerSeen = false;
 	GameObject playerGO;
+
 	private Transform playerPos;
 	private Vector3 targetDirection;
 	private float maxVelocity = 5.0f;
 	private Transform myTransform;
+	private int force = 1000;
+	private Vector3 Offset;
 
 	// Use this for initialization
 	void Start () {
@@ -88,7 +90,8 @@ public class Enemy : MonoBehaviour {
 		}
 
 		else if(!isInBattle && playerSeen){
-			/*if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
+			print ("ASSSSSSSSSSSSSSSSSSSS");
+			if ( Mathf.Sqrt(Mathf.Pow(rigidbody.velocity.x,2) + Mathf.Pow(rigidbody.velocity.x,2)) <= maxVelocity )
 			{
 				playerPos = playerGO.transform;
 				if (playerPos.position.z < 0)
@@ -105,7 +108,7 @@ public class Enemy : MonoBehaviour {
 				targetDirection= new Vector3(targetDirection.x, 0, targetDirection.z);
 				targetDirection.Normalize();
 				rigidbody.AddForce(targetDirection * force * Time.deltaTime);
-			}*/
+			}
 		}
 	}
 
@@ -155,7 +158,7 @@ public class Enemy : MonoBehaviour {
 
 	public void PlayerSeen(GameObject player){
 		playerGO = player;
-		playerInRange = true;
+		playerSeen = true;
 	}
 
 
