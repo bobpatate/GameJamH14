@@ -41,10 +41,6 @@ public class GUI_test : MonoBehaviour {
 	private GUIStyle currentStyle = null;
 	private GUIStyle currentStyle2 = null;
 
-	void Start(){
-
-	}
-
 	private void InitStyles()	
 	{
 		if( currentStyle == null )	
