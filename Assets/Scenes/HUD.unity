@@ -130,7 +130,7 @@ MonoBehaviour:
   maxhp: 0
   healthbarWidth: 35
   healthbarMaxWidth: 35
-  myHealthbar: {fileID: 0}
+  myHealthbar: {fileID: 100000, guid: b3a7e2325e57ec4469f1e1418b8ba97b, type: 2}
 --- !u!114 &269669565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +523,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b807d4cd9838634aadc86b70b33bfde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength: 5
+  endurance: 1
+  speed: 1
+  maxhp: 15
+  hp: 15
   team: 
 --- !u!114 &1599045136
 MonoBehaviour:
@@ -547,6 +552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5092e2d8fc36b83469b3f72281465610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sword: 0
+  armor: 0
+  boots: 0
+  gathering: 0
 --- !u!1 &1756744702
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b807d4cd9838634aadc86b70b33bfde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength: 5
+  endurance: 1
+  speed: 1
+  maxhp: 15
+  hp: 15
   team: 
 --- !u!114 &1756744711
 MonoBehaviour:
@@ -699,6 +713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5092e2d8fc36b83469b3f72281465610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sword: 0
+  armor: 0
+  boots: 0
+  gathering: 0
 --- !u!1 &1835188068
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,18 +901,10 @@ MonoBehaviour:
   iconElectronicT1: {fileID: 0}
   iconElectronicT2: {fileID: 0}
   iconElectronicT3: {fileID: 0}
-  equipP1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  equipP2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Player1: {fileID: 1756744702}
   Player2: {fileID: 1599045127}
+  redBG: {fileID: 2800000, guid: bf37d2ce47402984ca1ab5d65c002f00, type: 3}
+  blueBG: {fileID: 2800000, guid: 0760465f8c71ef9429a4b879fb889b59, type: 3}
 --- !u!4 &1881421341
 Transform:
   m_ObjectHideFlags: 0
