@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 
 	//stats
 	public enum EnemyLevel{ Weak, Intermediate, Strong, SuperStrong, Boss};
-
+	public float maxPatrolDistance=20;
 	public EnemyLevel level;
 	public string team;
 	float strength;
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour {
 	PlayerCombat player;
 	bool playerPlayed = true;
 	float nextAttack;
+	bool atInitPos=true;
 	
 	bool playerSeen = false;
 	GameObject playerGO;
@@ -28,8 +29,7 @@ public class Enemy : MonoBehaviour {
 	private Vector3 targetDirection;
 	private Transform myTransform;
 	private int force = 1000;
-
-	Vector3 posInit;
+	private Vector3 posInit;
 
 	// Use this for initialization
 	void Start () {
@@ -91,27 +91,46 @@ public class Enemy : MonoBehaviour {
 			playerPlayed = false;
 			Attacks ();
 		}
-
-		else if(!isInBattle && playerSeen && playerGO.GetComponent<PlayerCombat>().team != team && !playerGO.GetComponent<PlayerCombat>().IsInBattle()){
-			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
-			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
-
+		
+		else if(!isInBattle )
+		{
 			playerPos = playerGO.transform;
+				if(playerSeen && playerGO.GetComponent<PlayerCombat>().team != team && !playerGO.GetComponent<PlayerCombat>().IsInBattle() && Vector3.Distance(playerPos.position,posInit)<maxPatrolDistance)
+			{
+				atInitPos=false;
+				rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
+				rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;		
 
-			if (playerPos.position.z < 0){
+
 				targetDirection = (playerPos.position - myTransform.position);
+				
+
+				targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
+				targetDirection.Normalize();
+				gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
 			}
 			else{
-				targetDirection = (playerPos.position - myTransform.position);
+				moveToStartingPos();
 			}
+		}
+	}
 
+	void moveToStartingPos()
+	{
+		if (Vector3.Distance(myTransform.position,posInit)<0.5 ) {
+			rigidbody.velocity= new Vector3(0,0,0);
+			atInitPos=true;
+				}
+		else
+		{
+			targetDirection = (posInit - myTransform.position);
+			
+			
 			targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
 			targetDirection.Normalize();
 			gameObject.rigidbody.AddForce(targetDirection * force * Time.deltaTime);
 		}
 	}
-
-
 	//Actions
 	void Attacks(){
 		player.ReceivesDamage(strength);
@@ -163,7 +182,8 @@ public class Enemy : MonoBehaviour {
 	
 	public void PlayerGone(){
 		playerSeen = false;
-		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		rigidbody.velocity = new Vector3(0,0,0);
+	//	rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	public string getTeam(){

@@ -751,10 +751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5092e2d8fc36b83469b3f72281465610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: 0
-  armor: 0
-  boots: 0
-  gathering: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -787,6 +783,7 @@ MonoBehaviour:
   maxhp: 15
   hp: 15
   team: Blue
+  damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -811,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7bb1c596fb90474f9ccc266ee5b16d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ressourceDelay: 4
   playerControllerScript: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
