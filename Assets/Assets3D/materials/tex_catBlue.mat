@@ -24,7 +24,7 @@ Material:
         first:
           name: _node2
         second:
-          m_Texture: {fileID: 2800000, guid: 93339ca66925f7b4dba1f8c9cdac2c18, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8c31df24d57fd5c44aff42793b3689c0, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
