@@ -113,6 +113,8 @@ public class PlayerCombat : MonoBehaviour {
 			if(other.gameObject.transform.parent.GetComponent<Enemy>().getTeam() != team){
 				playerControllerScript.LookAt(other.gameObject);
 				rigidbody.velocity = new Vector3(0,0,0);
+				Animator animator = GetComponentInChildren<Animator>();
+				animator.SetBool("walking", false);
 				playerControllerScript.enabled = false;
 				isInBattle = true;
 				print("Fightooo!!!");

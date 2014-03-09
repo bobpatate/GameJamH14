@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 		rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
 
 		if(_horizontal != 0 || _vertical != 0)
-			transform.FindChild(modelChild).LookAt(transform.position + velocityChange);
+			transform.FindChild(modelChild).LookAt(transform.position + targetVelocity);
 		
 		Animator animator = GetComponentInChildren<Animator>();
 		animator.SetBool("walking", _horizontal != 0 || _vertical != 0);
