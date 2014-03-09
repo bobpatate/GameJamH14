@@ -1085,6 +1085,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &41869793
 Halo:
   m_ObjectHideFlags: 0
@@ -6025,6 +6026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectingSpeed: 1
   playerNumber: 1
+  audioSource: {fileID: 0}
 --- !u!114 &265955530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6057,6 +6059,7 @@ MonoBehaviour:
   maxhp: 15
   hp: 15
   team: Blue
+  audioSource: {fileID: 0}
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!114 &265955532
 MonoBehaviour:
@@ -7389,6 +7392,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &331895703
 Halo:
   m_ObjectHideFlags: 0
@@ -7500,6 +7504,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &336182699
 Halo:
   m_ObjectHideFlags: 0
@@ -12528,6 +12533,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &567363563
 Halo:
   m_ObjectHideFlags: 0
@@ -13223,7 +13229,7 @@ AudioSource:
   m_GameObject: {fileID: 599462265}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2db7f3c8bdaa5fe46805112224928c28, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -14096,6 +14102,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &642996242
 Halo:
   m_ObjectHideFlags: 0
@@ -15230,6 +15237,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!114 &677531844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16855,6 +16863,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &741407504
 Halo:
   m_ObjectHideFlags: 0
@@ -18511,6 +18520,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &832010873
 Halo:
   m_ObjectHideFlags: 0
@@ -21841,6 +21851,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1004373058
 Halo:
   m_ObjectHideFlags: 0
@@ -22114,6 +22125,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1016078778
 Halo:
   m_ObjectHideFlags: 0
@@ -22671,6 +22683,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1040410401
 Halo:
   m_ObjectHideFlags: 0
@@ -23434,6 +23447,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1119746704
 Halo:
   m_ObjectHideFlags: 0
@@ -24948,6 +24962,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!1 &1194596925
 GameObject:
   m_ObjectHideFlags: 0
@@ -29033,6 +29048,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1456642272
 Halo:
   m_ObjectHideFlags: 0
@@ -29373,6 +29389,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1464591284
 Halo:
   m_ObjectHideFlags: 0
@@ -29484,6 +29501,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1471011716
 Halo:
   m_ObjectHideFlags: 0
@@ -29834,6 +29852,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1496561350
 Halo:
   m_ObjectHideFlags: 0
@@ -29945,6 +29964,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1503252617
 Halo:
   m_ObjectHideFlags: 0
@@ -31107,6 +31127,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1546293189
 Halo:
   m_ObjectHideFlags: 0
@@ -31325,6 +31346,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!114 &1553628232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32059,6 +32081,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1587258101
 Halo:
   m_ObjectHideFlags: 0
@@ -32281,6 +32304,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1601425616
 Halo:
   m_ObjectHideFlags: 0
@@ -32463,6 +32487,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1610966222
 Halo:
   m_ObjectHideFlags: 0
@@ -33238,6 +33263,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1645423756
 Halo:
   m_ObjectHideFlags: 0
@@ -33791,6 +33817,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1665544798
 Halo:
   m_ObjectHideFlags: 0
@@ -37937,6 +37964,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1868741495
 Halo:
   m_ObjectHideFlags: 0
@@ -38314,6 +38342,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1881059717
 Halo:
   m_ObjectHideFlags: 0
@@ -38593,6 +38622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectingSpeed: 1
   playerNumber: 2
+  audioSource: {fileID: 0}
 --- !u!114 &1889867236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38625,6 +38655,7 @@ MonoBehaviour:
   maxhp: 15
   hp: 15
   team: Red
+  audioSource: {fileID: 0}
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
 --- !u!114 &1889867238
 MonoBehaviour:
@@ -38780,6 +38811,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &1892265822
 Halo:
   m_ObjectHideFlags: 0
@@ -42989,6 +43021,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &2110007801
 Halo:
   m_ObjectHideFlags: 0
@@ -43272,6 +43305,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &2124701797
 Halo:
   m_ObjectHideFlags: 0
@@ -43423,6 +43457,7 @@ MonoBehaviour:
   team: Blue
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &2128376204
 Halo:
   m_ObjectHideFlags: 0
@@ -44007,6 +44042,7 @@ MonoBehaviour:
   team: Red
   respawnDelay: 20
   damageText: {fileID: 100000, guid: e1affab428838be44b06322468fbb1e5, type: 2}
+  audioSource: {fileID: 0}
 --- !u!122 &2146657782
 Halo:
   m_ObjectHideFlags: 0
