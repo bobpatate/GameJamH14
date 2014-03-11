@@ -49,6 +49,8 @@ public class PlayerInventory : MonoBehaviour {
 				showCollectTimeBar = true;
 				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
+				rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+
 
 				collectingStartTime = Time.time;
 				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
@@ -62,6 +64,8 @@ public class PlayerInventory : MonoBehaviour {
 				showCollectTimeBar = true;
 				rigidbody.velocity = new Vector3(0,0,0);
 				playerControllerScript.enabled = false;
+				rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+
 				
 				collectingStartTime = Time.time;
 				collectingTime = Time.time + (collectible.GetComponent<RessourceStats>().collectingTime*collectible.GetComponent<RessourceStats>().tier*collectible.GetComponent<RessourceStats>().tier) / collectingSpeed;
@@ -112,7 +116,8 @@ public class PlayerInventory : MonoBehaviour {
 		collectingTime = 0.0f;
 		showCollectTimeBar = false;
 		isInCollectingRange = false;
-
+		rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
+		rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
 		if ( CheckRessourceExisting(collectibleName))
 		{
 			AddToInventory(collectible);
